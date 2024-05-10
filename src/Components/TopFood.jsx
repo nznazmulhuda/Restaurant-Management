@@ -5,7 +5,7 @@ function TopFood({ data }) {
     const id = data;
     return (
         <div className="border-2 border-orange-300 shadow-lg p-3 rounded-lg">
-            <div className="h-[40vh] relative overflow-hidden rounded-lg -z-10">
+            <div className="h-[40vh] relative overflow-hidden rounded-lg">
                 <img
                     className="w-full h-full rounded-lg absolute hover:transform hover:scale-[1.04] transition-all cursor-pointer"
                     src="/banner.webp"

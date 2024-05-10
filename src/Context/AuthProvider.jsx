@@ -1,21 +1,20 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import PropTypes from "prop-types";
 
 export const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
+    const [pageY, setPageY] = useState(null);
     const AuthInfo = {
-        test: "Messsage",
-        // user: "nahid",
-        // user: null,
+        user: "nahid",
     };
 
     return (
-        <>
+        <div onWheel={(e) => setPageY(e.pageY)}>
             <AuthContext.Provider value={AuthInfo}>
                 {children}
             </AuthContext.Provider>
-        </>
+        </div>
     );
 }
 
