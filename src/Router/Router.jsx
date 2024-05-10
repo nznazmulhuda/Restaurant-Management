@@ -29,7 +29,7 @@ const Router = createBrowserRouter([
                 element: <Gallery />,
             },
             {
-                path: "/food",
+                path: "/food/:id",
                 element: <SingleFood />,
             },
             {
