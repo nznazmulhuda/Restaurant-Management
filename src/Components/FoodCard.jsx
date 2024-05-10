@@ -34,7 +34,7 @@ function FoodCard() {
 
                 <Link to={"/"}>
                     <button className="border w-full text-center py-2 rounded-lg border-orange-600 shadow-lg text-lg font-bold hover:bg-orange-600 hover:text-white transition-all mt-5">
-                        Details Button
+                        Details
                     </button>
                 </Link>
             </div>
