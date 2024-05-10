@@ -33,7 +33,7 @@ function FoodCard() {
                 </h1>
 
                 <Link to={"/"}>
-                    <button className="border w-full text-center py-2 rounded-lg border-orange-600 shadow-lg text-lg font-bold hover:bg-orange-600 hover:text-white transition-all mt-5">
+                    <button className="border w-full text-center py-2 rounded-lg border-orange-600 shadow-lg text-lg font-bold hover:bg-orange-600 hover:text-white transition-all mt-5 text-black">
                         Details
                     </button>
                 </Link>

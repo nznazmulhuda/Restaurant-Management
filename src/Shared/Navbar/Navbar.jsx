@@ -17,8 +17,8 @@ function Navbar() {
                     to={"/"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600`
+                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline`
                     }
                 >
                     Home
@@ -30,8 +30,8 @@ function Navbar() {
                     to={"/foods"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600`
+                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline`
                     }
                 >
                     All Foods
@@ -43,8 +43,8 @@ function Navbar() {
                     to={"/gallery"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600`
+                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline`
                     }
                 >
                     Gallery
@@ -144,19 +144,19 @@ function Navbar() {
                 >
                     <Link
                         to={"/"}
-                        className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white"
+                        className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         My added food items
                     </Link>
                     <Link
                         to={"/"}
-                        className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white"
+                        className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         Add a food items
                     </Link>
                     <Link
                         to={"/"}
-                        className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white"
+                        className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         My ordered food items
                     </Link>

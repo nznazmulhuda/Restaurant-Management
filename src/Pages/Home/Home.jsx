@@ -15,7 +15,7 @@ function Home() {
             <Banner />
 
             <div>
-                <h1 className="mt-10 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-5">
+                <h1 className="mt-10 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-5 text-black">
                     Top Foods
                 </h1>
 
@@ -28,7 +28,7 @@ function Home() {
                 {data.length > 6 && (
                     <Link to={"/foods"}>
                         <div className="text-center mt-5">
-                            <button className="border py-2 px-5 border-orange-600 rounded-lg hover:bg-orange-600 hover:text-white font-bold transition-all">
+                            <button className="border py-2 px-5 border-orange-600 rounded-lg hover:bg-orange-600 hover:text-white font-bold transition-all text-black">
                                 Show all
                             </button>
                         </div>
@@ -37,13 +37,13 @@ function Home() {
             </div>
 
             <div className="mt-10">
-                <div className="flex items-center justify-between flex-col-reverse md:flex-row gap-3 border px-4 md:px-20 py-3 md:py-5 rounded-xl border-orange-600 shadow-lg">
+                <div className="flex items-center justify-between flex-col-reverse md:flex-row gap-3 border px-4 md:px-20 py-3 md:py-5 rounded-xl border-orange-600 shadow-lg text-black">
                     <div className="md:w-1/2">
                         <h1 className="text-xl font-bold">OUR MISSION</h1>
                         <h1 className="text-2xl font-bold mt-3 mb-2">
                             Chefs team
                         </h1>
-                        <p className="leading-7">
+                        <p className="leading-7 text-[12px]">
                             At Dish Dash, we are privileged to have a team of
                             culinary artisans who bring creativity, skill, and
                             dedication to every dish they create. Led by our
@@ -80,7 +80,7 @@ function Home() {
                 Contact Information
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full items-center border border-orange-600 rounded-xl px-10 md:px-20 py-10 shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full items-center border border-orange-600 rounded-xl px-10 md:px-20 py-10 shadow-lg text-black">
                 <div className="flex flex-col items-center md:items-start">
                     <div className="flex flex-col items-center justify-center w-32 md:w-36 h-32 md:h-36 border rounded-full bg-orange-600 text-white font-bold">
                         <h1 className="text-2xl md:text-3xl">40%</h1>

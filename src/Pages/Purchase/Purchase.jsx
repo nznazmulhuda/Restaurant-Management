@@ -1,6 +1,5 @@
 import toast from "react-hot-toast";
 import Title from "../../Components/Title";
-import { Link } from "react-router-dom";
 
 function Purchase() {
     const handlePurchase = (e) => {

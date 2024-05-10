@@ -14,19 +14,19 @@ function TopFood({ data }) {
             </div>
 
             <div>
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mt-5">
+                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mt-5 text-black">
                     Food Name
                 </h1>
 
                 <div className="flex justify-between">
-                    <h1 className="mt-3 text-[13px]">
+                    <h1 className="text-[13px]">
                         Category:{" "}
                         <span className="font-semibold hover:underline cursor-pointer">
                             Food Category
                         </span>
                     </h1>
 
-                    <h1 className="mt-3 text-[13px]">
+                    <h1 className="text-[13px]">
                         Price:{" "}
                         <span className="font-semibold hover:underline cursor-pointer">
                             Food price
@@ -37,7 +37,7 @@ function TopFood({ data }) {
                 <hr className="my-3" />
 
                 <Link to={`/food/${id}`}>
-                    <button className="border py-2 w-full rounded-lg border-orange-600 hover:bg-orange-600 hover:text-white transition-all font-bold text-lg">
+                    <button className="border py-2 w-full rounded-lg border-orange-600 hover:bg-orange-600 hover:text-white transition-all font-bold text-lg text-black">
                         Details
                     </button>
                 </Link>
