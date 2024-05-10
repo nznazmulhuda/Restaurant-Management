@@ -1,14 +1,16 @@
 import { Helmet } from "react-helmet-async";
+import Banner from "../../Components/Banner";
 
 function Home() {
-  return (
-    <div>
-      <Helmet>
-        <title>Dish Dish | Home</title>
-      </Helmet>
-      <h1>Home</h1>
-    </div>
-  );
+    return (
+        <div className="container mx-auto">
+            <Helmet>
+                <title>Dish Dish | Home</title>
+            </Helmet>
+
+            <Banner />
+        </div>
+    );
 }
 
 export default Home;

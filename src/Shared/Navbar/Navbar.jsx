@@ -54,7 +54,7 @@ function Navbar() {
     );
 
     return (
-        <nav className="border-b-2 rounded-lg lg:rounded-[50px] py-2 sticky top-0 border-b-orange-500 shadow-lg px-4 mb-10">
+        <nav className="border-b-2 rounded-lg lg:rounded-[50px] py-2 sticky top-0 border-b-orange-500 shadow-lg px-4 mb-10 bg-white">
             <div className="grid grid-cols-3 items-center relative container mx-auto">
                 <div className="hidden md:flex">
                     <ul className="flex items-center gap-5 md:gap-10 flex-col md:flex-row">
