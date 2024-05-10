@@ -4,6 +4,7 @@ import {
     Gallery,
     Home,
     Login,
+    Purchase,
     Register,
     SingleFood,
 } from "../Pages";
@@ -31,6 +32,10 @@ const Router = createBrowserRouter([
             {
                 path: "/food/:id",
                 element: <SingleFood />,
+            },
+            {
+                path: "/purchase/:id",
+                element: <Purchase />,
             },
             {
                 path: "/login",
