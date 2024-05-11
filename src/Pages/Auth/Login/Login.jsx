@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import style from "./Login.module.css";
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 function Login() {
     const { login, googleLogin, githubLogin } = useAuth();
@@ -26,24 +27,36 @@ function Login() {
         form.reset();
     };
 
+    // Login / Register account using google
     const handleGoogle = () => {
         googleLogin()
             .then((res) => {
-                console.log(res);
-                toast.success("Google login success!");
-                navigate(state ? state : "/");
-                // api call
+                // Save email and user name on the database
+                const name = res.user.displayName;
+                const email = res.user.email;
+                const user = { name, email };
+                axios.post("http://localhost:5000/users", user).then((data) => {
+                    if (data.data.insertedId) {
+                        toast.success("Google login success!");
+                    }
+                });
             })
             .catch((e) => toast.error(e.message));
     };
 
+    // Login / Register account using github
     const handleGithub = () => {
         githubLogin()
             .then((res) => {
-                console.log(res);
-                toast.success("Github login success!");
-                navigate(state ? state : "/");
-                // api call
+                // Save email and user name on the database
+                const name = res.user.displayName;
+                const email = res.user.email;
+                const user = { name, email };
+                axios.post("http://localhost:5000/users", user).then((data) => {
+                    if (data.data.insertedId) {
+                        toast.success("Github login success!");
+                    }
+                });
             })
             .catch((e) => toast.error(e.message));
     };

@@ -4,7 +4,7 @@ import Title from "../../Components/Title";
 import { RiAddLargeFill } from "react-icons/ri";
 import { Modal } from "rsuite";
 import useAuth from "../../Hooks/useAuth";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Gallery() {
     const { user } = useAuth();
