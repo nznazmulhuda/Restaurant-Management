@@ -53,7 +53,6 @@ function UpdateItem() {
                     console.log("delete");
 
                     // api call
-                    
                 } else if (
                     /* Read more about handling dismissals below */
                     result.dismiss === Swal.DismissReason.cancel
