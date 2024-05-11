@@ -1,13 +1,15 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-function GalleryCard() {
+function GalleryCard({ gallery }) {
     const [isHover, setIsHover] = useState(false);
+    const { name, imageUrl, feedback } = gallery;
     return (
         <div>
             <div className="relative overflow-hidden w-full h-[30vh] rounded-lg transition-all">
                 <img
                     className="w-full h-full absolute transition-all hover:scale-[1.05] hover:transform rounded-lg"
-                    src="/banner.webp"
+                    src={imageUrl}
                     alt=""
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}
@@ -21,20 +23,18 @@ function GalleryCard() {
                     onMouseLeave={() => setIsHover(false)}
                 >
                     <h1 className="text-2xl md:text-3xl font-bold text-white">
-                        User Name
+                        {name}
                     </h1>
 
-                    <p className="text-center w-3/4 text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Dolores exercitationem molestiae, omnis ipsam
-                        ducimus perferendis, aliquam provident laboriosam nisi
-                        sunt odit accusantium ipsa autem quis iste animi magni
-                        cumque excepturi?
-                    </p>
+                    <p className="text-center w-3/4 text-white">{feedback}</p>
                 </div>
             </div>
         </div>
     );
 }
+
+GalleryCard.propTypes = {
+    gallery: PropTypes.object,
+};
 
 export default GalleryCard;

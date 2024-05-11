@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import GalleryCard from "../../Components/GalleryCard";
 import Title from "../../Components/Title";
 import { RiAddLargeFill } from "react-icons/ri";
 import { Modal } from "rsuite";
 import useAuth from "../../Hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
 function Gallery() {
+    const [gallerys, setGallerys] = useState([]);
     const { user } = useAuth();
     const navigate = useNavigate();
     const { pathname } = useLocation();
@@ -23,19 +26,29 @@ function Gallery() {
         }
         return handleOpen(400);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const addGalleryCard = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const imageUrl = e.target.imageUrl.value;
         const feedback = e.target.feedback.value;
+        const data = { name, imageUrl, feedback };
 
-        console.log({ name, imageUrl, feedback });
-
-        // api call
+        // store gallery data on the database
+        axios
+            .post("/gallery", data)
+            .then(
+                (res) => res.data.insertedId && toast.success("Added success!")
+            );
 
         handleClose();
         e.target.reset();
     };
+
+    useEffect(() => {
+        axios.get("/gallery").then((res) => setGallerys(res.data.reverse()));
+    }, [addGalleryCard]);
 
     return (
         <div>
@@ -53,7 +66,7 @@ function Gallery() {
                                 name="name"
                                 placeholder="Enter your name"
                                 className="outline-none border-b-2 border-orange-600 rounded-lg px-3 py-2 w-full cursor-not-allowed"
-                                value={"Nazmul Huda Nahid"}
+                                value={user?.displayName}
                                 disabled
                             />
                         </div>
@@ -87,14 +100,12 @@ function Gallery() {
             </Modal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 mt-10 container mx-auto">
-                <GalleryCard />
-                <GalleryCard />
-                <GalleryCard />
-                <GalleryCard />
-                <GalleryCard />
+                {gallerys.map((gallery) => (
+                    <GalleryCard key={gallery._id} gallery={gallery} />
+                ))}
 
                 <div
-                    className="h-[30vh] border flex items-center justify-center text-7xl text-gray-500 rounded-lg cursor-pointer"
+                    className="h-[30vh] border flex items-center justify-center text-7xl text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 transition-all"
                     title="Add"
                     onClick={handleAddGalleryCard}
                 >

@@ -35,7 +35,7 @@ function Login() {
                 const name = res.user.displayName;
                 const email = res.user.email;
                 const user = { name, email };
-                axios.post("http://localhost:5000/users", user).then((data) => {
+                axios.post("/users", user).then((data) => {
                     if (data.data.insertedId) {
                         toast.success("Google login success!");
                     }
@@ -52,7 +52,7 @@ function Login() {
                 const name = res.user.displayName;
                 const email = res.user.email;
                 const user = { name, email };
-                axios.post("http://localhost:5000/users", user).then((data) => {
+                axios.post("/users", user).then((data) => {
                     if (data.data.insertedId) {
                         toast.success("Github login success!");
                     }

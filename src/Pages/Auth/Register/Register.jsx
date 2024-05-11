@@ -29,7 +29,7 @@ function Register() {
 
                 // Save email and user name on the database
                 const user = { email, name };
-                axios.post("http://localhost:5000/users", user).then((data) => {
+                axios.post("/users", user).then((data) => {
                     if (data.data.insertedId) {
                         toast.success("Account created!");
                     }
@@ -48,7 +48,7 @@ function Register() {
                 const name = res.user.displayName;
                 const email = res.user.email;
                 const user = { name, email };
-                axios.post("http://localhost:5000/users", user).then((data) => {
+                axios.post("/users", user).then((data) => {
                     if (data.data.insertedId) {
                         toast.success("Google login success!");
                     }
@@ -65,7 +65,7 @@ function Register() {
                 const name = res.user.displayName;
                 const email = res.user.email;
                 const user = { name, email };
-                axios.post("http://localhost:5000/users", user).then((data) => {
+                axios.post("/users", user).then((data) => {
                     if (data.data.insertedId) {
                         toast.success("Github login success!");
                     }

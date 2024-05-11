@@ -8,6 +8,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 import "rsuite/dist/rsuite.min.css";
 import TanstackQuery from "./Tanstack/TanstackQuery.jsx";
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:5000";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
