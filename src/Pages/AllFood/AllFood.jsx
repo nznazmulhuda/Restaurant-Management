@@ -2,21 +2,22 @@ import { useEffect, useState } from "react";
 import Title from "../../Components/Title";
 import { FaSearch } from "react-icons/fa";
 import FoodCard from "../../Components/FoodCard";
+import axios from "axios";
 
 function AllFood() {
-    const [searchText, setSearchText] = useState(null);
+    const [foods, setFoods] = useState([]);
     const handleSearch = (e) => {
         e.preventDefault();
         const search = e.target.search.value;
-        console.log(search);
-        // api call
+
+        // get search foo
+        axios.get(`/foods?search=${search}`).then((res) => setFoods(res.data));
         e.target.reset();
     };
 
     useEffect(() => {
-        console.log(searchText);
-        // api call
-    }, [searchText]);
+        axios.get("/foods").then((res) => setFoods(res.data.reverse()));
+    }, []);
 
     return (
         <div>
@@ -32,7 +33,6 @@ function AllFood() {
                         name="search"
                         placeholder="Food name..."
                         className="outline-none flex-1 border-none py-2 px-3"
-                        onChange={(e) => setSearchText(e.target.value)}
                         required
                     />
                     <button>
@@ -42,9 +42,9 @@ function AllFood() {
             </form>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 container mx-auto mt-10">
-                <FoodCard />
-                <FoodCard />
-                <FoodCard />
+                {foods.map((food) => (
+                    <FoodCard key={food._id} food={food} />
+                ))}
             </div>
         </div>
     );
