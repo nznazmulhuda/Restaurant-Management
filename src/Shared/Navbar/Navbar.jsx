@@ -143,19 +143,19 @@ function Navbar() {
                     }`}
                 >
                     <Link
-                        to={"/"}
+                        to={"/my-food-item"}
                         className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         My added food items
                     </Link>
                     <Link
-                        to={"/"}
+                        to={"/add-food"}
                         className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         Add a food items
                     </Link>
                     <Link
-                        to={"/"}
+                        to={"/my-ordered-food"}
                         className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         My ordered food items

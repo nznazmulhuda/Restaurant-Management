@@ -1,9 +1,12 @@
 import {
+    AddFood,
     AllFood,
     ErrorPage,
     Gallery,
     Home,
     Login,
+    MyFoodItem,
+    MyOrderedFood,
     Purchase,
     Register,
     SingleFood,
@@ -28,6 +31,18 @@ const Router = createBrowserRouter([
             {
                 path: "/gallery",
                 element: <Gallery />,
+            },
+            {
+                path: "/my-food-item",
+                element: <MyFoodItem />,
+            },
+            {
+                path: "/add-food",
+                element: <AddFood />,
+            },
+            {
+                path: "/my-ordered-food",
+                element: <MyOrderedFood />,
             },
             {
                 path: "/food/:id",
