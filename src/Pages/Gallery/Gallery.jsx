@@ -4,10 +4,11 @@ import Title from "../../Components/Title";
 import { RiAddLargeFill } from "react-icons/ri";
 import { Modal } from "rsuite";
 import useAuth from "../../Hooks/useAuth";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 function Gallery() {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const { pathname } = useLocation();
     const [open, setOpen] = useState(false);
     const [size, setSize] = useState();
@@ -18,7 +19,7 @@ function Gallery() {
     const handleClose = () => setOpen(false);
     const handleAddGalleryCard = () => {
         if (!user) {
-            return <Navigate to={"/login"} state={pathname} />;
+            return navigate("/login", { state: pathname });
         }
         return handleOpen(400);
     };

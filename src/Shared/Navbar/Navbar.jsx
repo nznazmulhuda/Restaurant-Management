@@ -121,7 +121,7 @@ function Navbar() {
                             >
                                 <img
                                     className="w-full h-full rounded-full p-1"
-                                    src={user.profilePic || "/logo.jpg"}
+                                    src={user.photoURL}
                                     alt="profilePic"
                                 />
                             </div>

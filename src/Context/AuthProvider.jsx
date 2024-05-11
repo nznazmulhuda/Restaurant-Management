@@ -45,6 +45,7 @@ function AuthProvider({ children }) {
                 setIsLoading(false);
                 return;
             } else {
+                setIsLoading(false);
                 return setUser(null);
             }
         });

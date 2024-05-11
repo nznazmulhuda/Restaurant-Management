@@ -1,12 +1,14 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import Title from "../../../Components/Title";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import style from "./Login.module.css";
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
 
 function Login() {
     const { login, googleLogin, githubLogin } = useAuth();
+    const navigate = useNavigate();
+    const { state } = useLocation();
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -16,6 +18,7 @@ function Login() {
         login(email, pass)
             .then((res) => {
                 console.log(res);
+                navigate(state ? state : "/");
                 // api call
             })
             .catch((e) => console.error(e.message));
@@ -28,6 +31,7 @@ function Login() {
             .then((res) => {
                 console.log(res);
                 toast.success("Google login success!");
+                navigate(state ? state : "/");
                 // api call
             })
             .catch((e) => toast.error(e.message));
@@ -38,6 +42,7 @@ function Login() {
             .then((res) => {
                 console.log(res);
                 toast.success("Github login success!");
+                navigate(state ? state : "/");
                 // api call
             })
             .catch((e) => toast.error(e.message));

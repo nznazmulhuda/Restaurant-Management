@@ -14,6 +14,8 @@ import {
 } from "../Pages";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
+import PrivateRoute from "./PrivateRoute";
+import IsLoged from "./IsLoged";
 
 const Router = createBrowserRouter([
     {
@@ -35,15 +37,27 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/my-food-item",
-                element: <MyFoodItem />,
+                element: (
+                    <PrivateRoute>
+                        <MyFoodItem />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/add-food",
-                element: <AddFood />,
+                element: (
+                    <PrivateRoute>
+                        <AddFood />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/my-ordered-food",
-                element: <MyOrderedFood />,
+                element: (
+                    <PrivateRoute>
+                        <MyOrderedFood />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/food/:id",
@@ -51,19 +65,35 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/purchase/:id",
-                element: <Purchase />,
+                element: (
+                    <PrivateRoute>
+                        <Purchase />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/update/:id",
-                element: <UpdateItem />,
+                element: (
+                    <PrivateRoute>
+                        <UpdateItem />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/login",
-                element: <Login />,
+                element: (
+                    <IsLoged>
+                        <Login />
+                    </IsLoged>
+                ),
             },
             {
                 path: "/register",
-                element: <Register />,
+                element: (
+                    <IsLoged>
+                        <Register />
+                    </IsLoged>
+                ),
             },
         ],
     },
