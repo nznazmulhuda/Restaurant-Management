@@ -1,7 +1,13 @@
-import Title from "../../Components/Title";
+import axios from "axios";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
+import Title from "../../Components/Title";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 function AddFood() {
+    const { user } = useAuth();
+    const navigate = useNavigate();
     const [url, setUrl] = useState(null);
     const [foodName, setFoodName] = useState("Food Name");
     const [foodCategory, setFoodCategory] = useState("Food Category");
@@ -11,8 +17,9 @@ function AddFood() {
     const [about, setAbout] = useState("About food is here");
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log({
+        const email = user.email;
+        const name = user.displayName;
+        const food = {
             url,
             foodName,
             foodCategory,
@@ -20,9 +27,17 @@ function AddFood() {
             foodQuantity,
             foodOrigin,
             about,
-        });
+            email,
+            name,
+        };
 
-        // api call
+        // post food data on database
+        axios.post("/foods", food).then((res) => {
+            if (res.data.insertedId) {
+                toast.success("Food added success!");
+                navigate("/foods");
+            }
+        });
 
         e.target.reset();
     };
@@ -159,7 +174,7 @@ function AddFood() {
                                 placeholder="Tell us about your food"
                                 className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
                                 disabled
-                                value={`nznazmulhuda@gmailcom`}
+                                value={user.email}
                             />
                         </div>
 
@@ -170,7 +185,7 @@ function AddFood() {
                                 name="name"
                                 placeholder="Tell us about your food"
                                 className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
-                                value={`Nazmul Huda`}
+                                value={user.displayName}
                                 disabled
                             />
                         </div>
