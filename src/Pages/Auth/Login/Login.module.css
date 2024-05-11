@@ -1,0 +1,12 @@
+.login {
+    background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.482),
+            rgba(205, 128, 13, 0.09)
+        ),
+        url("https://img.freepik.com/free-photo/grilled-beef-burger-with-fries-cheese-tomato-generative-ai_188544-8466.jpg?w=740&t=st=1715408078~exp=1715408678~hmac=533c3d2b8e5aaa2f98e61f095365d70d8962c2416194e9bd847c96c63c6cd3a5");
+
+    border-radius: 10px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

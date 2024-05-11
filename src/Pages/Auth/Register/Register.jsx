@@ -32,7 +32,7 @@ function Register() {
             <Title title={"Register"} />
 
             <div className="container mx-auto mt-10 flex items-center justify-center">
-                <div className="flex items-center gap-10 md:gap-16 flex-col-reverse md:flex-row ">
+                <div className="flex items-center gap-10 md:gap-16 flex-col-reverse md:flex-row">
                     <div className="border p-5 md:p-10 rounded-xl border-orange-600 shadow-xl md:w-[50%]">
                         <form onSubmit={handleRegister}>
                             <div className="mb-5 md:mb-10">
