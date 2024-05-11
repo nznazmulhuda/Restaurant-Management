@@ -1,29 +1,46 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import Title from "../../../Components/Title";
 import { Link } from "react-router-dom";
-import login from "../../../assets/login.jpg";
 import style from "./Login.module.css";
+import useAuth from "../../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 function Login() {
+    const { login, googleLogin, githubLogin } = useAuth();
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const pass = form.pass.value;
 
-        console.log({ email, pass });
-
-        // api call
+        login(email, pass)
+            .then((res) => {
+                console.log(res);
+                // api call
+            })
+            .catch((e) => console.error(e.message));
 
         form.reset();
     };
 
     const handleGoogle = () => {
-        console.log("google login");
+        googleLogin()
+            .then((res) => {
+                console.log(res);
+                toast.success("Google login success!");
+                // api call
+            })
+            .catch((e) => toast.error(e.message));
     };
 
     const handleGithub = () => {
-        console.log("github login");
+        githubLogin()
+            .then((res) => {
+                console.log(res);
+                toast.success("Github login success!");
+                // api call
+            })
+            .catch((e) => toast.error(e.message));
     };
 
     return (
@@ -71,7 +88,7 @@ function Login() {
                             </div>
 
                             <div className="text-center mt-2">
-                                <Link to={"/login"}>
+                                <Link to={"/register"}>
                                     <span className="underline">
                                         Do not have an account?
                                     </span>

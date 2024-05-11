@@ -1,14 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import { Button, ButtonToolbar } from "rsuite";
 import { useState } from "react";
 import { MdRestaurantMenu } from "react-icons/md";
 import { IoIosRestaurant } from "react-icons/io";
+import { toast } from "react-hot-toast";
 
 function Navbar() {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const [isHover, setIsHover] = useState(false);
     const [isMenus, setIsMenus] = useState(false);
+    const handleLogout = () => {
+        logout()
+            .then(() => toast.success("Logout Success!"))
+            .catch((e) => toast.error(e.message));
+    };
 
     const links = (
         <>
@@ -88,7 +93,10 @@ function Navbar() {
                     </ul>
 
                     <div className="flex md:hidden">
-                        <button className="border border-orange-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-orange-600 transition-all">
+                        <button
+                            className="border border-orange-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-orange-600 transition-all"
+                            onClick={handleLogout}
+                        >
                             Logout
                         </button>
                     </div>
@@ -118,22 +126,20 @@ function Navbar() {
                                 />
                             </div>
                             <div className="hidden md:flex">
-                                <button className="border border-orange-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-orange-600 transition-all">
+                                <button
+                                    className="border border-orange-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-orange-600 transition-all"
+                                    onClick={handleLogout}
+                                >
                                     Logout
                                 </button>
                             </div>
                         </div>
                     ) : (
-                        <ButtonToolbar>
-                            <Link to={"/login"}>
-                                <Button
-                                    appearance="subtle"
-                                    className="border border-orange-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-orange-600 transition-all"
-                                >
-                                    Login
-                                </Button>
-                            </Link>
-                        </ButtonToolbar>
+                        <Link to={"/login"}>
+                            <button className="border border-orange-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-orange-600 transition-all text-black">
+                                Login
+                            </button>
+                        </Link>
                     )}
                 </div>
 

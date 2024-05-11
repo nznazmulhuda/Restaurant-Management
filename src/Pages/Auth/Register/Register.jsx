@@ -2,8 +2,13 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import Title from "../../../Components/Title";
 import { Link } from "react-router-dom";
 import { PiChefHatDuotone } from "react-icons/pi";
+import useAuth from "../../../Hooks/useAuth";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../../../Firebase/Firebase.config";
+import { toast } from "react-hot-toast";
 
 function Register() {
+    const { register, googleLogin, githubLogin } = useAuth();
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -12,19 +17,37 @@ function Register() {
         const photoURL = form.photoURL.value;
         const pass = form.pass.value;
 
-        console.log({ name, email, photoURL, pass });
-
-        // api call
+        register(email, pass)
+            .then((res) => {
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                    photoURL: photoURL,
+                });
+                toast.success("Account created!");
+            })
+            .catch((e) => toast.error(e.message));
 
         form.reset();
     };
 
     const handleGoogle = () => {
-        console.log("google login");
+        googleLogin()
+            .then((res) => {
+                console.log(res);
+                toast.success("Google login success!");
+                // api call
+            })
+            .catch((e) => toast.error(e.message));
     };
 
     const handleGithub = () => {
-        console.log("github login");
+        githubLogin()
+            .then((res) => {
+                console.log(res);
+                toast.success("Github login success!");
+                // api call
+            })
+            .catch((e) => toast.error(e.message));
     };
 
     return (
