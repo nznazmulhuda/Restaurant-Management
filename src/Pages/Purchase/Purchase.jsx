@@ -1,7 +1,20 @@
 import toast from "react-hot-toast";
 import Title from "../../Components/Title";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import useAuth from "../../Hooks/useAuth";
 
 function Purchase() {
+    const { id } = useParams();
+    const { user } = useAuth();
+    const navigate = useNavigate();
+    const [food, setFood] = useState([]);
+    useEffect(() => {
+        axios.get(`/foods?id=${id}`).then((res) => setFood(res.data[0]));
+    }, [id]);
+    const { url, foodName, foodPrice } = food;
+    const [quentitys, setQuentitys] = useState(null);
     const handlePurchase = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -15,7 +28,12 @@ function Purchase() {
 
         // api call
 
-        form.reset();
+        navigate("/my-ordered-food");
+    };
+    const handlePrice = (e) => {
+        const q = e.target.value;
+        const p = parseFloat(foodPrice.slice(1));
+        setQuentitys(q * p);
     };
 
     return (
@@ -28,7 +46,7 @@ function Purchase() {
                         <div className="w-full md:h-[40vh] relative overflow-hidden rounded-lg">
                             <img
                                 className="w-full h-full rounded-lg transition-all hover:scale-[1.05]"
-                                src="/banner.webp"
+                                src={url}
                                 alt=""
                             />
                         </div>
@@ -37,14 +55,14 @@ function Purchase() {
                     <div className="flex flex-col justify-center">
                         <div className="flex items-center justify-between flex-row">
                             <h1 className="text-2xl md:text-3xl font-bold">
-                                Food Name
+                                {foodName}
                             </h1>
 
                             <h1 className="text-xl md:text-2xl font-bold text-orange-600 mt-2">
                                 <span className="text-lg text-black">
                                     Price:{" "}
                                 </span>
-                                <i>$55</i>
+                                <i>{foodPrice}</i>
                             </h1>
                         </div>
                     </div>
@@ -58,6 +76,7 @@ function Purchase() {
                             name="foodName"
                             placeholder={`Food name`}
                             className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            defaultValue={foodName}
                             required
                         />
                     </div>
@@ -69,17 +88,20 @@ function Purchase() {
                             name="price"
                             placeholder={`Price`}
                             className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
-                            required
+                            defaultValue={"$ " + quentitys}
+                            disabled
                         />
                     </div>
 
                     <div className="mb-5">
                         <label htmlFor="Quantity">Quantity</label>
                         <input
-                            type="text"
+                            type="number"
                             name="quantity"
                             placeholder={`Quantity`}
                             className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            defaultValue={1}
+                            onChange={handlePrice}
                             required
                         />
                     </div>
@@ -91,7 +113,7 @@ function Purchase() {
                             name="name"
                             placeholder={`Your name`}
                             className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
-                            value={"Nazmul Huda Nahid"}
+                            value={user.displayName}
                             disabled
                         />
                     </div>
@@ -103,7 +125,7 @@ function Purchase() {
                             name="email"
                             placeholder={`Your email`}
                             className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
-                            value={"nahid@jidne.com"}
+                            value={user.email}
                             disabled
                         />
                     </div>
@@ -112,7 +134,7 @@ function Purchase() {
                         type="submit"
                         className="border w-full py-2 border-orange-600 rounded-lg shadow-lg text-lg hover:bg-orange-700 hover:text-white font-bold transition-all"
                     >
-                        purchase
+                        Purchase
                     </button>
                 </form>
             </div>

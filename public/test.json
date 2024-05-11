@@ -1,0 +1,182 @@
+[
+    {
+        "url": "https://i.ibb.co/D1YZXgg/img1.jpg",
+        "foodName": "Grilled Salmon Fillet",
+        "foodPrice": "$22.99",
+        "foodQuantity": 25,
+        "foodOrigin": "Norway",
+        "foodCategory": "Seafood",
+        "about": "Succulent salmon fillet seasoned with herbs, grilled to perfection, and served with a side of roasted vegetables."
+    },
+    {
+        "url": "https://i.ibb.co/PMm6kqy/img2.jpg",
+        "foodName": "Filet Mignon",
+        "foodPrice": "$36.99",
+        "foodQuantity": 20,
+        "foodOrigin": "USA",
+        "foodCategory": "Meat",
+        "about": "Tender and juicy filet mignon cooked to your preference and served with garlic mashed potatoes and seasonal vegetables."
+    },
+    {
+        "url": "https://i.ibb.co/PtvMC6M/img3.jpg",
+        "foodName": "Mediterranean Salad",
+        "foodPrice": "$14.99",
+        "foodQuantity": 15,
+        "foodOrigin": "Greece",
+        "foodCategory": "Salad",
+        "about": "A refreshing blend of mixed greens, tomatoes, cucumbers, olives, feta cheese, and tangy vinaigrette dressing."
+    },
+    {
+        "url": "https://i.ibb.co/dBz8HWB/img4.jpg",
+        "foodName": "Chicken Alfredo Pasta",
+        "foodPrice": "$18.99",
+        "foodQuantity": 28,
+        "foodOrigin": "Italy",
+        "foodCategory": "Pasta",
+        "about": "Tender grilled chicken breast served over a bed of fettuccine pasta tossed in creamy Alfredo sauce."
+    },
+    {
+        "url": "https://i.ibb.co/QjDwjyC/img5.webp",
+        "foodName": "Vegetarian Pizza",
+        "foodPrice": "$16.99",
+        "foodQuantity": 12,
+        "foodOrigin": "Italy",
+        "foodCategory": "Pizza",
+        "about": "A flavorful combination of fresh vegetables, mozzarella cheese, and tomato sauce on a crispy thin crust."
+    },
+    {
+        "url": "https://i.ibb.co/N94q6zX/img6.jpg",
+        "foodName": "Classic Beef Burger",
+        "foodPrice": "$13.99",
+        "foodQuantity": 22,
+        "foodOrigin": "USA",
+        "foodCategory": "Burger",
+        "about": "Juicy beef patty topped with cheddar cheese, lettuce, tomato, onion, and served with fries."
+    },
+    {
+        "url": "https://i.ibb.co/LdHgqKF/img7.jpg",
+        "foodName": "Shrimp Scampi",
+        "foodPrice": "$20.99",
+        "foodQuantity": 18,
+        "foodOrigin": "Italy",
+        "foodCategory": "Seafood",
+        "about": "Plump shrimp sautéed in garlic, white wine, and butter sauce, served over linguine pasta."
+    },
+    {
+        "url": "https://i.ibb.co/PDGDLmH/img8.jpg",
+        "foodName": "Caprese Panini",
+        "foodPrice": "$12.99",
+        "foodQuantity": 10,
+        "foodOrigin": "Italy",
+        "foodCategory": "Sandwich",
+        "about": "Fresh mozzarella, ripe tomatoes, basil leaves, and balsamic glaze pressed between ciabatta bread."
+    },
+    {
+        "url": "https://i.ibb.co/ckDDBPk/img9.jpg",
+        "foodName": "Lobster Bisque",
+        "foodPrice": "$9.99",
+        "foodQuantity": 29,
+        "foodOrigin": "France",
+        "foodCategory": "Soup",
+        "about": "Rich and creamy soup made with tender lobster meat, seasoned to perfection with a hint of sherry."
+    },
+    {
+        "url": "https://i.ibb.co/qxH9fSM/img10.jpg",
+        "foodName": "Beef Tacos",
+        "foodPrice": "$14.99",
+        "foodQuantity": 7,
+        "foodOrigin": "Mexico",
+        "foodCategory": "Mexican",
+        "about": "Soft corn tortillas filled with seasoned ground beef, lettuce, cheese, tomato, and salsa."
+    },
+    {
+        "url": "https://i.ibb.co/JH19r39/img11.jpg",
+        "foodName": "Pesto Chicken Sandwich",
+        "foodPrice": "$15.99",
+        "foodQuantity": 19,
+        "foodOrigin": "Italy",
+        "foodCategory": "Sandwich",
+        "about": "Grilled chicken breast topped with pesto sauce, roasted red peppers, and provolone cheese on ciabatta bread."
+    },
+    {
+        "url": "https://i.ibb.co/mtnGC7k/img12.jpg",
+        "foodName": "Vegetable Stir-Fry",
+        "foodPrice": "$17.99",
+        "foodQuantity": 25,
+        "foodOrigin": "China",
+        "foodCategory": "Asian",
+        "about": "Assorted fresh vegetables stir-fried in a savory sauce, served over steamed jasmine rice."
+    },
+    {
+        "url": "https://i.ibb.co/XSq88Pw/img13.jpg",
+        "foodName": "Margherita Pizza",
+        "foodPrice": "$15.99",
+        "foodQuantity": 14,
+        "foodOrigin": "Italy",
+        "foodCategory": "Pizza",
+        "about": "Classic pizza topped with tomato sauce, fresh mozzarella cheese, basil, and a drizzle of olive oil."
+    },
+    {
+        "url": "https://i.ibb.co/QjDwjyC/img5.webp",
+        "foodName": "Seafood Paella",
+        "foodPrice": "$25.99",
+        "foodQuantity": 16,
+        "foodOrigin": "Spain",
+        "foodCategory": "Spanish",
+        "about": "A Spanish-inspired rice dish cooked with shrimp, mussels, clams, calamari, and chorizo in saffron-infused broth."
+    },
+    {
+        "url": "https://i.ibb.co/92Y7BpB/img15.jpg",
+        "foodName": "Crispy Calamari",
+        "foodPrice": "$11.99",
+        "foodQuantity": 8,
+        "foodOrigin": "Italy",
+        "foodCategory": "Appetizer",
+        "about": "Tender calamari rings lightly breaded and fried to a golden crisp, served with marinara sauce."
+    },
+    {
+        "url": "https://i.ibb.co/88kryhn/img16.jpg",
+        "foodName": "Mushroom Risotto",
+        "foodPrice": "$19.99",
+        "foodQuantity": 27,
+        "foodOrigin": "Italy",
+        "foodCategory": "Italian",
+        "about": "Creamy Arborio rice cooked with mushrooms, garlic, white wine, and Parmesan cheese."
+    },
+    {
+        "url": "https://i.ibb.co/23vL2QB/img17.jpg",
+        "foodName": "Tiramisu",
+        "foodPrice": "$8.99",
+        "foodQuantity": 13,
+        "foodOrigin": "Italy",
+        "foodCategory": "Dessert",
+        "about": "Classic Italian dessert made with layers of espresso-soaked ladyfingers, mascarpone cheese, and cocoa powder."
+    },
+    {
+        "url": "https://i.ibb.co/Mhgf3zD/img18.jpg",
+        "foodName": "Cajun Shrimp Pasta",
+        "foodPrice": "$21.99",
+        "foodQuantity": 6,
+        "foodOrigin": "USA",
+        "foodCategory": "Pasta",
+        "about": "Spicy Cajun-seasoned shrimp served over linguine pasta with a creamy garlic sauce."
+    },
+    {
+        "url": "https://i.ibb.co/DkyPFx8/img19.jpg",
+        "foodName": "Greek Salad",
+        "foodPrice": "$13.99",
+        "foodQuantity": 17,
+        "foodOrigin": "Greece",
+        "foodCategory": "Salad",
+        "about": "A refreshing mix of crisp lettuce, tomatoes, cucumbers, olives, onions, feta cheese, and Greek dressing."
+    },
+    {
+        "url": "https://i.ibb.co/0jy50J7/img20.jpg",
+        "foodName": "Pulled Pork Sandwich",
+        "foodPrice": "$16.99",
+        "foodQuantity": 11,
+        "foodOrigin": "USA",
+        "foodCategory": "Sandwich",
+        "about": "Slow-cooked pulled pork piled high on a brioche bun with coleslaw and BBQ sauce."
+    }
+]
