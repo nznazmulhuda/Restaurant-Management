@@ -6,7 +6,7 @@ export const AuthContext = createContext(null);
 function AuthProvider({ children }) {
     const [pageY, setPageY] = useState(null);
     const AuthInfo = {
-        user: "nahid",
+        // user: "nahid",
         // user: "",
     };
 
