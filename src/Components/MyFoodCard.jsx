@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MyFoodCard() {
     return (
         <div>
@@ -14,9 +16,11 @@ function MyFoodCard() {
                         </h3>
                     </div>
 
-                    <button className="border py-2 px-4 rounded-lg text-lg font-bold border-orange-600 hover:bg-orange-600 hover:text-white transition-all mr-5">
-                        Update
-                    </button>
+                    <Link to={`/update/50`}>
+                        <button className="border py-2 px-4 rounded-lg text-lg font-bold border-orange-600 hover:bg-orange-600 hover:text-white transition-all mr-5 text-black">
+                            Update
+                        </button>
+                    </Link>
                 </div>
             </div>
             ;

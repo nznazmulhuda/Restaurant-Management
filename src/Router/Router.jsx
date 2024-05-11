@@ -10,6 +10,7 @@ import {
     Purchase,
     Register,
     SingleFood,
+    UpdateItem,
 } from "../Pages";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
@@ -51,6 +52,10 @@ const Router = createBrowserRouter([
             {
                 path: "/purchase/:id",
                 element: <Purchase />,
+            },
+            {
+                path: "/update/:id",
+                element: <UpdateItem />,
             },
             {
                 path: "/login",

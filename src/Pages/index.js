@@ -9,6 +9,7 @@ import Purchase from "./Purchase/Purchase";
 import AddFood from "./AddFood/AddFood";
 import MyFoodItem from "./MyFoodItem/MyFoodItem";
 import MyOrderedFood from "./MyOrderedFood/MyOrderedFood";
+import UpdateItem from "./UpdateItem/UpdateItem";
 
 export {
     AllFood,
@@ -22,4 +23,5 @@ export {
     AddFood,
     MyFoodItem,
     MyOrderedFood,
+    UpdateItem,
 };
