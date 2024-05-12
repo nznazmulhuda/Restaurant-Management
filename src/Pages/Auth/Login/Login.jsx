@@ -17,12 +17,11 @@ function Login() {
         const pass = form.pass.value;
 
         login(email, pass)
-            .then((res) => {
-                console.log(res);
+            .then(() => {
+                toast.success("Welcome back!");
                 navigate(state ? state : "/");
-                // api call
             })
-            .catch((e) => console.error(e.message));
+            .catch((e) => toast.error(e.message));
 
         form.reset();
     };

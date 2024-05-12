@@ -1,21 +1,31 @@
-import toast from "react-hot-toast";
-import Title from "../../Components/Title";
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import Title from "../../Components/Title";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { enUS } from "rsuite/esm/locales";
 
 function Purchase() {
     const { id } = useParams();
     const { user } = useAuth();
     const navigate = useNavigate();
     const [food, setFood] = useState([]);
+    const [isQuantity, setIsQuantity] = useState(false);
     useEffect(() => {
         axios.get(`/foods?id=${id}`).then((res) => {
             setFood(res.data[0]);
         });
     }, [id]);
-    const { url, foodName, foodPrice } = food;
+    const {
+        url,
+        foodName,
+        foodPrice,
+        name: authorName,
+        _id,
+        email: mail,
+        foodQuantity,
+    } = food;
     const handlePurchase = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -26,15 +36,33 @@ function Purchase() {
         const email = form.email.value;
         const date = new Date();
         const time = date.toLocaleString();
-        const food = { foodName, price, quantity, name, email, time, url };
+        const food = {
+            foodName,
+            price,
+            quantity,
+            name,
+            email,
+            time,
+            url,
+            authorName,
+        };
 
-        // api call
-        axios.post("/purchase-food", food).then((res) => {
-            if (res.data.insertedId) {
-                toast.success("Purchase done!!!");
-                navigate("/my-ordered-food");
-            }
-        });
+        if (mail === email) {
+            toast.error("This item is yours!");
+            navigate(`/food/${_id}`);
+        } else if (foodQuantity === 0) {
+            setIsQuantity(true);
+            return toast.error("This food is unavailable!");
+        } else if (foodQuantity < quantity) {
+            return toast.error("Please decrease your quantity!");
+        } else if (mail !== email) {
+            axios.post(`/purchase-food?id=${_id}`, food).then((res) => {
+                if (res.data.insertedId) {
+                    toast.success("Purchase done!!!");
+                    navigate("/my-ordered-food");
+                }
+            });
+        }
     };
     const handlePrice = (e) => {
         const q = e.target.value;
@@ -55,6 +83,15 @@ function Purchase() {
                                 src={url}
                                 alt=""
                             />
+                            <div
+                                className={`absolute top-0 left-0 bg-[#0000007e] w-full h-full ${
+                                    isQuantity ? "flex" : "hidden"
+                                } items-center justify-center`}
+                            >
+                                <h3 className=" text-red-500 -rotate-[30deg] text-5xl md:text-7xl">
+                                    Unavailable
+                                </h3>
+                            </div>
                         </div>
                     </div>
 
@@ -140,6 +177,7 @@ function Purchase() {
                     <button
                         type="submit"
                         className="border w-full py-2 border-green-600 rounded-lg shadow-lg text-lg hover:bg-green-600 hover:text-white font-bold transition-all"
+                        disabled={isQuantity ? true : false}
                     >
                         Purchase
                     </button>

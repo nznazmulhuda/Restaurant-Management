@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import PropTypes from "prop-types";
 
 function MyOrderedCard({ food, refetch }) {
-    const { foodName, price, time, name, _id, url } = food;
+    const { foodName, price, time, authorName, _id, url } = food;
     // handle delete modal
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -66,7 +66,7 @@ function MyOrderedCard({ food, refetch }) {
                             {time.split(",")[1]}
                         </h4>
                         <h3 className="text-sm md:text-2xl">
-                            <i>{name}</i>
+                            <i>{authorName}</i>
                         </h3>
                     </div>
 

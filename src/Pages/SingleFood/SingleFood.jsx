@@ -8,8 +8,16 @@ function SingleFood() {
     useEffect(() => {
         axios.get(`/foods?id=${id}`).then((res) => setFood(res.data[0]));
     }, [id]);
-    const { _id, url, foodName, about, foodPrice, foodOrigin, foodCategory } =
-        food;
+    const {
+        _id,
+        url,
+        foodName,
+        about,
+        foodPrice,
+        foodOrigin,
+        foodCategory,
+        name,
+    } = food;
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto border rounded-xl p-5 md:p-10 border-green-600 shadow-lg gap-5 md:gap-7">
             <div className="flex items-center">
@@ -43,7 +51,7 @@ function SingleFood() {
 
                     <h1 className="text-xl md:text-2xl font-bold text-green-600 mt-2">
                         <span className="text-lg text-black">Made By: </span>
-                        <i>Nahid</i>
+                        <i>{name}</i>
                     </h1>
 
                     <h1 className="text-xl md:text-2xl font-bold text-green-600 mt-2">

@@ -1,25 +1,34 @@
-import Title from "../../Components/Title";
-import MyFoodCard from "../../Components/MyFoodCard";
-import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Loader } from "rsuite";
-import useAuth from "../../Hooks/useAuth";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
+import Title from "../../Components/Title";
+import { useQuery } from "@tanstack/react-query";
+import MyFoodCard from "../../Components/MyFoodCard";
 
 function MyFoodItem() {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const [foods, setFoods] = useState([]);
-    const { data, isPending } = useQuery({
+    // get data
+    const { isPending } = useQuery({
         queryKey: ["myFood"],
-        queryFn: () => axios.get(`/foods?email=${user?.email}`),
+        queryFn: () =>
+            axios.get(`/foods?email=${user?.email}`).then((data) => {
+                if (data) {
+                    setFoods(data.data);
+                }
+                return data.data;
+            }),
     });
+    // handle logout
+    const handleLogout = () => {
+        logout()
+            .then(() => toast.success("Success logout!"))
+            .catch((e) => toast.error(e.message));
+    };
 
-    useEffect(() => {
-        if (data) {
-            setFoods(data.data);
-        }
-    }, [data]);
     return (
         <div>
             <Title title={"Food you are added"} />
@@ -69,12 +78,15 @@ function MyFoodItem() {
                         <div className="mt-5">
                             <input
                                 type="text"
-                                value={"Nazmul Huda Nahid"}
+                                value={user.displayName}
                                 disabled
                                 className="outline-none border border-green-600 rounded-lg py-2 px-3 w-full cursor-not-allowed"
                             />
 
-                            <button className="border w-full py-2 mt-5 border-green-600 rounded-lg font-bold hover:bg-green-600 hover:text-white transition-all">
+                            <button
+                                className="border w-full py-2 mt-5 border-green-600 rounded-lg font-bold hover:bg-green-600 hover:text-white transition-all"
+                                onClick={handleLogout}
+                            >
                                 Logout
                             </button>
                         </div>
