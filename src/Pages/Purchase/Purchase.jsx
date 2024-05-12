@@ -4,7 +4,6 @@ import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { enUS } from "rsuite/esm/locales";
 
 function Purchase() {
     const { id } = useParams();

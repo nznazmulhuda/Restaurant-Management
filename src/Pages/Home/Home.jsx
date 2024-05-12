@@ -3,9 +3,23 @@ import TopFood from "../../Components/TopFood";
 import { Link } from "react-router-dom";
 import Banner from "../../Components/Banner";
 import { HiOutlineMail } from "react-icons/hi";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { useState } from "react";
+import { Loader } from "rsuite";
 
 function Home() {
-    const data = [1, 2, 3, 4, 5, 6, 7];
+    const [datas, setDatas] = useState([]);
+    const { isPending } = useQuery({
+        queryKey: ["nahid"],
+        queryFn: () =>
+            axios.get("/top-food").then((res) => {
+                if (res) {
+                    setDatas(res.data);
+                }
+                return res.data;
+            }),
+    });
     return (
         <div className="container mx-auto">
             <Helmet>
@@ -20,12 +34,21 @@ function Home() {
                 </h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
-                    {data.slice(0, 6).map((topFood) => (
-                        <TopFood key={topFood} data={topFood} />
+                    {datas.map((topFood) => (
+                        <TopFood key={topFood._id} data={topFood} />
                     ))}
+                    {isPending && (
+                        <div className="flex items-center justify-center mt-5 md:mt-10">
+                            <Loader
+                                size="lg"
+                                content="Loading"
+                                className="font-bold"
+                            />
+                        </div>
+                    )}
                 </div>
 
-                {data.length > 6 && (
+                {
                     <Link to={"/foods"}>
                         <div className="text-center mt-5">
                             <button className="border py-2 px-5 border-green-600 rounded-lg hover:bg-green-600 hover:text-white font-bold transition-all text-black">
@@ -33,7 +56,7 @@ function Home() {
                             </button>
                         </div>
                     </Link>
-                )}
+                }
             </div>
 
             <div className="mt-10">
