@@ -1,9 +1,10 @@
+import axios from "axios";
 import Swal from "sweetalert2";
 import PropTypes from "prop-types";
-import axios from "axios";
 
 function MyOrderedCard({ food, refetch }) {
     const { foodName, price, time, name, _id, url } = food;
+    // handle delete modal
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: "btn btn-success",
@@ -11,6 +12,7 @@ function MyOrderedCard({ food, refetch }) {
         },
         buttonsStyling: true,
     });
+    // handle delete
     const handleDelete = () => {
         swalWithBootstrapButtons
             .fire({
@@ -31,11 +33,10 @@ function MyOrderedCard({ food, refetch }) {
                     });
 
                     // api call
-                    axios.delete(`/delete?id=${_id}`).then((res) => refetch());
-                } else if (
-                    /* Read more about handling dismissals below */
-                    result.dismiss === Swal.DismissReason.cancel
-                ) {
+                    axios
+                        .delete(`/delete?id=${_id}&db=purchaseDB`)
+                        .then(() => refetch());
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
                     swalWithBootstrapButtons.fire({
                         title: "Cancelled",
                         text: "Your imaginary file is safe :)",

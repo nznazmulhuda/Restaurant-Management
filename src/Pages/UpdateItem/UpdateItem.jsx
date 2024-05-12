@@ -1,8 +1,57 @@
-import { useState } from "react";
-import Title from "../../Components/Title";
+import axios from "axios";
 import Swal from "sweetalert2";
+import { Loader } from "rsuite";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+import Title from "../../Components/Title";
+import { useQuery } from "@tanstack/react-query";
+import { useNavigate, useParams } from "react-router-dom";
 
 function UpdateItem() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [url, setUrl] = useState("");
+    const [about, setAbout] = useState("");
+    const [foodName, setFoodName] = useState("");
+    const [foodPrice, setFoodPrice] = useState("");
+    const [foodCategory, setFoodCategory] = useState("");
+    const [foodQuantity, setFoodQuantity] = useState("");
+    // get data
+    const { isPending } = useQuery({
+        queryKey: ["update"],
+        queryFn: () =>
+            axios.get(`/foods?id=${id}`).then((data) => {
+                const food = data?.data[0];
+                setUrl(food.url);
+                setFoodName(food.foodName);
+                setFoodCategory(food.foodCategory);
+                setFoodPrice(food.foodPrice);
+                setFoodQuantity(food.foodQuantity);
+                setAbout(food.about);
+                return food;
+            }),
+    });
+    // handle update
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const updateFood = {
+            url,
+            foodName,
+            foodCategory,
+            foodPrice,
+            foodQuantity,
+            about,
+        };
+        // api call
+        axios.put(`/update?id=${id}`, updateFood).then((res) => {
+            if (res.data.acknowledged) {
+                toast.success("Successfully updated!");
+                navigate("/my-food-item");
+            }
+        });
+        e.target.reset();
+    };
+    // handle delete modal
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: "btn btn-success",
@@ -10,28 +59,7 @@ function UpdateItem() {
         },
         buttonsStyling: true,
     });
-    const [url, setUrl] = useState(null);
-    const [foodName, setFoodName] = useState("Food Name");
-    const [foodCategory, setFoodCategory] = useState("Food Category");
-    const [foodPrice, setFoodPrice] = useState("$Price");
-    const [foodQuantity, setFoodQuantity] = useState(0);
-    const [about, setAbout] = useState("About food is here");
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        console.log({
-            url,
-            foodName,
-            foodCategory,
-            foodPrice,
-            foodQuantity,
-            about,
-        });
-
-        // api call
-
-        e.target.reset();
-    };
+    // handle delete
     const handleDelete = () => {
         swalWithBootstrapButtons
             .fire({
@@ -50,13 +78,15 @@ function UpdateItem() {
                         text: "Your file has been deleted.",
                         icon: "success",
                     });
-                    console.log("delete");
 
                     // api call
-                } else if (
-                    /* Read more about handling dismissals below */
-                    result.dismiss === Swal.DismissReason.cancel
-                ) {
+                    axios.delete(`/delete?id=${id}&db=foodDB`).then((res) => {
+                        if (res.status === 200) {
+                            navigate("/my-food-item");
+                            toast.success("Successfully deleted!");
+                        }
+                    });
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
                     swalWithBootstrapButtons.fire({
                         title: "Cancelled",
                         text: "Your imaginary file is safe :)",
@@ -69,7 +99,11 @@ function UpdateItem() {
     return (
         <div>
             <Title title={`Update`} />
-
+            {isPending && (
+                <div className="flex items-center justify-center mt-5 md:mt-10">
+                    <Loader size="lg" content="Loading" className="font-bold" />
+                </div>
+            )}
             <div className="container mx-auto mt-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 items-center">
                     <div className="w-full mb-5 md:mb-0">
@@ -88,21 +122,17 @@ function UpdateItem() {
                                     <h4 className="mb-4">{foodName}</h4>
                                     <p>{foodCategory}</p>
                                 </div>
+
                                 <h3>
                                     <i>{foodPrice}</i>
                                 </h3>
+
                                 <h5 className="mb-2">
                                     Quantity:{" "}
                                     <span className="text-green-600 font-bold">
                                         {foodQuantity}
                                     </span>
                                 </h5>
-                                {/* <h5 className="mb-2">
-                                    Origin:{" "}
-                                    <span className="text-green-600 font-bold">
-                                        {foodOrigin}
-                                    </span>
-                                </h5> */}
 
                                 <p className="mb-5">{about}</p>
                                 <hr />
@@ -127,6 +157,7 @@ function UpdateItem() {
                                 placeholder="Food image URL"
                                 className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setUrl(e.target.value)}
+                                defaultValue={url}
                             />
                         </div>
 
@@ -138,6 +169,7 @@ function UpdateItem() {
                                 placeholder="Food Name"
                                 className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setFoodName(e.target.value)}
+                                defaultValue={foodName}
                             />
                         </div>
 
@@ -151,6 +183,7 @@ function UpdateItem() {
                                 onChange={(e) =>
                                     setFoodCategory(e.target.value)
                                 }
+                                defaultValue={foodCategory}
                             />
                         </div>
 
@@ -164,17 +197,18 @@ function UpdateItem() {
                                 onChange={(e) =>
                                     setFoodQuantity(e.target.value)
                                 }
+                                defaultValue={foodQuantity}
                             />
                         </div>
 
                         <div className="mb-5">
                             <label htmlFor="Food Price">Food Price</label>
                             <input
-                                type="number"
+                                type="text"
                                 name="price"
-                                placeholder="Food price"
                                 className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setFoodPrice(e.target.value)}
+                                defaultValue={foodPrice}
                             />
                         </div>
 
@@ -186,6 +220,7 @@ function UpdateItem() {
                                 placeholder="Tell us about your food"
                                 className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
                                 onChange={(e) => setAbout(e.target.value)}
+                                defaultValue={about}
                             />
                         </div>
 

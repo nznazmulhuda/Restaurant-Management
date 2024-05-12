@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react";
-import MyOrderedCard from "../../Components/MyOrderedCard";
+import axios from "axios";
+import { Loader } from "rsuite";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import useAuth from "../../Hooks/useAuth";
-import { Loader } from "rsuite";
-import { Link } from "react-router-dom";
+import MyOrderedCard from "../../Components/MyOrderedCard";
 
 function MyOrderedFood() {
     const { user } = useAuth();
     const [foods, setFoods] = useState([]);
-    const { data, isPending, refetch } = useQuery({
+    // get data
+    const { isPending, refetch } = useQuery({
         queryKey: ["myOrder"],
-        queryFn: () => axios.get(`/purchase-food?email=${user.email}`),
+        queryFn: () =>
+            axios.get(`/purchase-food?email=${user.email}`).then((data) => {
+                setFoods(data.data);
+                return data.data;
+            }),
     });
 
-    useEffect(() => {
-        if (data) {
-            setFoods(data.data);
-        }
-    }, [data]);
     return (
         <div>
             <Title title={"Foods are you added"} />

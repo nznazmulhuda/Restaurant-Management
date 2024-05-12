@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function MyFoodCard({ data }) {
-    const { foodName, foodPrice, _id } = data;
+    const { foodName, foodPrice, _id, url } = data;
     return (
         <div>
             <div className="flex items-center gap-5 md:gap-10 p-4 border rounded-xl shadow-lg">
                 <div className="w-32 md:w-36">
-                    <img className="w-full h-full" src="/logo.jpg" alt="" />
+                    <img className="w-full h-full" src={url} alt="" />
                 </div>
 
                 <div className="flex items-center justify-between w-full">
