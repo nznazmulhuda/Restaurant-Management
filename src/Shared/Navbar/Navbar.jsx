@@ -22,8 +22,8 @@ function Navbar() {
                     to={"/"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline`
+                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline hover:text-orange-600 hover:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline transition-all`
                     }
                 >
                     Home
@@ -35,8 +35,8 @@ function Navbar() {
                     to={"/foods"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline`
+                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline hover:text-orange-600 hover:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline transition-all`
                     }
                 >
                     All Foods
@@ -48,8 +48,8 @@ function Navbar() {
                     to={"/gallery"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline`
+                            ? `font-semibold text-[12px] md:text-[14px] text-orange-600 border-b border-b-orange-600 focus:text-orange-600 focus:no-underline hover:text-orange-600 hover:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-orange-600 hover:text-black hover:no-underline transition-all`
                     }
                 >
                     Gallery
@@ -116,12 +116,12 @@ function Navbar() {
                     {user ? (
                         <div className="flex items-center gap-5">
                             <div
-                                className="w-12 md:w-14 lg:w-16 border-2 border-orange-600 rounded-full cursor-pointer"
+                                className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16  border-2 border-orange-600 rounded-full cursor-pointer"
                                 onClick={() => setIsHover(!isHover)}
                             >
                                 <img
                                     className="w-full h-full rounded-full p-1"
-                                    src={user.photoURL}
+                                    src={user && user.photoURL}
                                     alt="profilePic"
                                 />
                             </div>

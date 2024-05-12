@@ -100,10 +100,6 @@ function Gallery() {
             </Modal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 mt-10 container mx-auto">
-                {gallerys.map((gallery) => (
-                    <GalleryCard key={gallery._id} gallery={gallery} />
-                ))}
-
                 <div
                     className="h-[30vh] border flex items-center justify-center text-7xl text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 transition-all"
                     title="Add"
@@ -111,6 +107,10 @@ function Gallery() {
                 >
                     <RiAddLargeFill />
                 </div>
+
+                {gallerys.map((gallery) => (
+                    <GalleryCard key={gallery._id} gallery={gallery} />
+                ))}
             </div>
         </div>
     );
