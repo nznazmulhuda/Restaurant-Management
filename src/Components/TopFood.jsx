@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function TopFood({ data }) {
     const id = data;
     return (
-        <div className="border-2 border-orange-300 shadow-lg p-3 rounded-lg">
+        <div className="border-2 border-green-300 shadow-lg p-3 rounded-lg">
             <div className="h-[40vh] relative overflow-hidden rounded-lg">
                 <img
                     className="w-full h-full rounded-lg absolute hover:transform hover:scale-[1.04] transition-all cursor-pointer"
@@ -37,7 +37,7 @@ function TopFood({ data }) {
                 <hr className="my-3" />
 
                 <Link to={`/food/${id}`}>
-                    <button className="border py-2 w-full rounded-lg border-orange-600 hover:bg-orange-600 hover:text-white transition-all font-bold text-lg text-black">
+                    <button className="border py-2 w-full rounded-lg border-green-600 hover:bg-green-600 hover:text-white transition-all font-bold text-lg text-black">
                         Details
                     </button>
                 </Link>

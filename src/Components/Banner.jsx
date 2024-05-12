@@ -22,7 +22,7 @@ function Banner() {
                         culinary excellence at Dish Dash.
                     </p>
                     <Link to={"/foods"}>
-                        <button className="border rounded-lg py-2 px-6 font-bold border-orange-600 hover:bg-orange-600 hover:text-white transition-all text-black">
+                        <button className="border rounded-lg py-2 px-6 font-bold border-green-600 hover:bg-green-600 hover:text-white transition-all text-black">
                             All Foods
                         </button>
                     </Link>

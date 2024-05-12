@@ -42,7 +42,7 @@ function AllFood() {
                 onSubmit={handleSearch}
                 className="flex items-center justify-center"
             >
-                <div className="flex justify-between items-center px-3 mt-10 border border-orange-600 md:w-[40%] rounded-lg shadow-lg">
+                <div className="flex justify-between items-center px-3 mt-10 border border-green-600 md:w-[40%] rounded-lg shadow-lg">
                     <input
                         type="search"
                         name="search"
@@ -51,7 +51,7 @@ function AllFood() {
                         required
                     />
                     <button>
-                        <FaSearch className="text-orange-600 text-lg cursor-pointer" />
+                        <FaSearch className="text-green-600 text-lg cursor-pointer" />
                     </button>
                 </div>
             </form>

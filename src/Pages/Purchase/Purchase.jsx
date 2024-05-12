@@ -24,13 +24,17 @@ function Purchase() {
         const quantity = form.quantity.value;
         const name = form.name.value;
         const email = form.email.value;
-        const time = new Date();
-        console.log({ foodName, price, quantity, name, email, time });
-        toast.success("Purchase done!!!");
+        const date = new Date();
+        const time = date.toLocaleString();
+        const food = { foodName, price, quantity, name, email, time, url };
 
         // api call
-
-        navigate("/my-ordered-food");
+        axios.post("/purchase-food", food).then((res) => {
+            if (res.data.insertedId) {
+                toast.success("Purchase done!!!");
+                navigate("/my-ordered-food");
+            }
+        });
     };
     const handlePrice = (e) => {
         const q = e.target.value;
@@ -60,7 +64,7 @@ function Purchase() {
                                 {foodName}
                             </h1>
 
-                            <h1 className="text-xl md:text-2xl font-bold text-orange-600 mt-2">
+                            <h1 className="text-xl md:text-2xl font-bold text-green-600 mt-2">
                                 <span className="text-lg text-black">
                                     Price:{" "}
                                 </span>
@@ -77,7 +81,7 @@ function Purchase() {
                             type="text"
                             name="foodName"
                             placeholder={`Food name`}
-                            className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
                             defaultValue={foodName}
                             required
                         />
@@ -90,7 +94,7 @@ function Purchase() {
                             name="price"
                             id="price"
                             placeholder={`Price`}
-                            className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
                             defaultValue={foodPrice}
                             disabled
                         />
@@ -102,7 +106,7 @@ function Purchase() {
                             type="number"
                             name="quantity"
                             placeholder={`Quantity`}
-                            className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
                             defaultValue={1}
                             onChange={handlePrice}
                             required
@@ -115,7 +119,7 @@ function Purchase() {
                             type="text"
                             name="name"
                             placeholder={`Your name`}
-                            className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
+                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
                             value={user.displayName}
                             disabled
                         />
@@ -127,7 +131,7 @@ function Purchase() {
                             type="text"
                             name="email"
                             placeholder={`Your email`}
-                            className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
+                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
                             value={user.email}
                             disabled
                         />
@@ -135,7 +139,7 @@ function Purchase() {
 
                     <button
                         type="submit"
-                        className="border w-full py-2 border-orange-600 rounded-lg shadow-lg text-lg hover:bg-orange-700 hover:text-white font-bold transition-all"
+                        className="border w-full py-2 border-green-600 rounded-lg shadow-lg text-lg hover:bg-green-600 hover:text-white font-bold transition-all"
                     >
                         Purchase
                     </button>

@@ -39,7 +39,7 @@ function MyFoodItem() {
                                 to={"/add-food"}
                                 className="hover:no-underline"
                             >
-                                <button className="text-black text-2xl md:text-3xl border py-2 px-4 rounded-lg border-orange-600 hover:bg-orange-600 hover:text-white transition-all font-bold">
+                                <button className="text-black text-2xl md:text-3xl border py-2 px-4 rounded-lg border-green-600 hover:bg-green-600 hover:text-white transition-all font-bold">
                                     Add food
                                 </button>
                             </Link>
@@ -71,10 +71,10 @@ function MyFoodItem() {
                                 type="text"
                                 value={"Nazmul Huda Nahid"}
                                 disabled
-                                className="outline-none border border-orange-600 rounded-lg py-2 px-3 w-full cursor-not-allowed"
+                                className="outline-none border border-green-600 rounded-lg py-2 px-3 w-full cursor-not-allowed"
                             />
 
-                            <button className="border w-full py-2 mt-5 border-orange-600 rounded-lg font-bold hover:bg-orange-600 hover:text-white transition-all">
+                            <button className="border w-full py-2 mt-5 border-green-600 rounded-lg font-bold hover:bg-green-600 hover:text-white transition-all">
                                 Logout
                             </button>
                         </div>

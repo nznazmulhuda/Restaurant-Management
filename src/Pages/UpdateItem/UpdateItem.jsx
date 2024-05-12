@@ -93,13 +93,13 @@ function UpdateItem() {
                                 </h3>
                                 <h5 className="mb-2">
                                     Quantity:{" "}
-                                    <span className="text-orange-600 font-bold">
+                                    <span className="text-green-600 font-bold">
                                         {foodQuantity}
                                     </span>
                                 </h5>
                                 {/* <h5 className="mb-2">
                                     Origin:{" "}
-                                    <span className="text-orange-600 font-bold">
+                                    <span className="text-green-600 font-bold">
                                         {foodOrigin}
                                     </span>
                                 </h5> */}
@@ -108,7 +108,7 @@ function UpdateItem() {
                                 <hr />
                                 <div className="text-right">
                                     <button
-                                        className="border border-orange-600 py-2 px-4 rounded-lg hover:bg-orange-600 hover:text-white font-bold transition-all"
+                                        className="border border-green-600 py-2 px-4 rounded-lg hover:bg-green-600 hover:text-white font-bold transition-all"
                                         onClick={handleDelete}
                                     >
                                         Delete
@@ -125,7 +125,7 @@ function UpdateItem() {
                                 type="url"
                                 name="foodImageUrl"
                                 placeholder="Food image URL"
-                                className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setUrl(e.target.value)}
                             />
                         </div>
@@ -136,7 +136,7 @@ function UpdateItem() {
                                 type="text"
                                 name="foodName"
                                 placeholder="Food Name"
-                                className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setFoodName(e.target.value)}
                             />
                         </div>
@@ -147,7 +147,7 @@ function UpdateItem() {
                                 type="text"
                                 name="category"
                                 placeholder="Food category"
-                                className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) =>
                                     setFoodCategory(e.target.value)
                                 }
@@ -160,7 +160,7 @@ function UpdateItem() {
                                 type="number"
                                 name="quantity"
                                 placeholder="Food quantity"
-                                className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) =>
                                     setFoodQuantity(e.target.value)
                                 }
@@ -173,7 +173,7 @@ function UpdateItem() {
                                 type="number"
                                 name="price"
                                 placeholder="Food price"
-                                className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setFoodPrice(e.target.value)}
                             />
                         </div>
@@ -184,14 +184,14 @@ function UpdateItem() {
                                 type="text"
                                 name="aboutFood"
                                 placeholder="Tell us about your food"
-                                className="outline-none border border-orange-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
+                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
                                 onChange={(e) => setAbout(e.target.value)}
                             />
                         </div>
 
                         <button
                             type="submit"
-                            className="border border-orange-600 py-2 w-full rounded-lg text-lg hover:bg-orange-600 hover:text-white font-bold transition-all"
+                            className="border border-green-600 py-2 w-full rounded-lg text-lg hover:bg-green-600 hover:text-white font-bold transition-all"
                         >
                             Update
                         </button>

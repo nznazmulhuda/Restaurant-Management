@@ -65,7 +65,7 @@ function Gallery() {
                                 type="text"
                                 name="name"
                                 placeholder="Enter your name"
-                                className="outline-none border-b-2 border-orange-600 rounded-lg px-3 py-2 w-full cursor-not-allowed"
+                                className="outline-none border-b-2 border-green-600 rounded-lg px-3 py-2 w-full cursor-not-allowed"
                                 value={user?.displayName}
                                 disabled
                             />
@@ -76,7 +76,7 @@ function Gallery() {
                                 type="url"
                                 name="imageUrl"
                                 placeholder="Image URL"
-                                className="outline-none border-b-2 border-orange-600 rounded-lg px-3 py-2 w-full"
+                                className="outline-none border-b-2 border-green-600 rounded-lg px-3 py-2 w-full"
                                 required
                             />
                         </div>
@@ -85,13 +85,13 @@ function Gallery() {
                                 type="text"
                                 name="feedback"
                                 placeholder="Your feedback"
-                                className="outline-none border-b-2 border-orange-600 rounded-lg px-3 py-2 w-full resize-none"
+                                className="outline-none border-b-2 border-green-600 rounded-lg px-3 py-2 w-full resize-none"
                                 required
                             />
                         </div>
 
                         <div className="text-right mt-5">
-                            <button className="border py-2 px-4 rounded-lg border-orange-600 font-bold text-black hover:bg-orange-600 hover:text-white transition-all">
+                            <button className="border py-2 px-4 rounded-lg border-green-600 font-bold text-black hover:bg-green-600 hover:text-white transition-all">
                                 Add
                             </button>
                         </div>

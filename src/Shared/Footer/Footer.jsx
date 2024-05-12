@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 function Footer() {
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-4 items-center text-center gap-5 md:gap-0 border-t-2 border-orange-600 rounded-lg lg:rounded-[50px] py-4 mt-10 text-black">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center text-center gap-5 md:gap-0 border-t-2 border-green-600 rounded-lg lg:rounded-[50px] py-4 mt-10 text-black">
                 <Link
                     to={"/"}
                     className="flex items-center justify-center flex-col"

@@ -28,7 +28,7 @@ function Home() {
                 {data.length > 6 && (
                     <Link to={"/foods"}>
                         <div className="text-center mt-5">
-                            <button className="border py-2 px-5 border-orange-600 rounded-lg hover:bg-orange-600 hover:text-white font-bold transition-all text-black">
+                            <button className="border py-2 px-5 border-green-600 rounded-lg hover:bg-green-600 hover:text-white font-bold transition-all text-black">
                                 Show all
                             </button>
                         </div>
@@ -37,7 +37,7 @@ function Home() {
             </div>
 
             <div className="mt-10">
-                <div className="flex items-center justify-between flex-col-reverse md:flex-row gap-3 border px-4 md:px-20 py-3 md:py-5 rounded-xl border-orange-600 shadow-lg text-black">
+                <div className="flex items-center justify-between flex-col-reverse md:flex-row gap-3 border px-4 md:px-20 py-3 md:py-5 rounded-xl border-green-600 shadow-lg text-black">
                     <div className="md:w-1/2">
                         <h1 className="text-xl font-bold">OUR MISSION</h1>
                         <h1 className="text-2xl font-bold mt-3 mb-2">
@@ -80,9 +80,9 @@ function Home() {
                 Contact Information
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full items-center border border-orange-600 rounded-xl px-10 md:px-20 py-10 shadow-lg text-black">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full items-center border border-green-600 rounded-xl px-10 md:px-20 py-10 shadow-lg text-black">
                 <div className="flex flex-col items-center md:items-start">
-                    <div className="flex flex-col items-center justify-center w-32 md:w-36 h-32 md:h-36 border rounded-full bg-orange-600 text-white font-bold">
+                    <div className="flex flex-col items-center justify-center w-32 md:w-36 h-32 md:h-36 border rounded-full bg-green-600 text-white font-bold">
                         <h1 className="text-2xl md:text-3xl">40%</h1>
                         <h5 className="text-center text-sm px-4">
                             BUSINESS LAUNCH
@@ -93,14 +93,14 @@ function Home() {
                         Our Contact
                     </h1>
 
-                    <button className="border border-orange-600 py-2 px-4 rounded-lg mt-2 hover:bg-orange-600 hover:text-white font-bold transition-all">
+                    <button className="border border-green-600 py-2 px-4 rounded-lg mt-2 hover:bg-green-600 hover:text-white font-bold transition-all">
                         Read More
                     </button>
                 </div>
 
                 <div className="mt-2 md:mt-0">
                     <div className="flex items-center gap-4">
-                        <div className="border p-2 md:p-3 rounded-full bg-orange-600 text-white">
+                        <div className="border p-2 md:p-3 rounded-full bg-green-600 text-white">
                             <HiOutlineMail className="text-2xl md:text-3xl" />
                         </div>
 
@@ -111,14 +111,14 @@ function Home() {
                             <h3 className="text-sm">
                                 Our friendly team is here to help
                             </h3>
-                            <p className="text-orange-600 cursor-pointer">
+                            <p className="text-green-600 cursor-pointer">
                                 dish@dash.com
                             </p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-4 mt-5">
-                        <div className="border p-2 md:p-3 rounded-full bg-orange-600 text-white">
+                        <div className="border p-2 md:p-3 rounded-full bg-green-600 text-white">
                             <HiOutlineMail className="text-2xl md:text-3xl" />
                         </div>
 
@@ -127,7 +127,7 @@ function Home() {
                             <h3 className="text-sm">
                                 Come say hello at our office HQ.
                             </h3>
-                            <p className="text-orange-600 cursor-pointer">
+                            <p className="text-green-600 cursor-pointer">
                                 121 Rock Street, 21 Avenue, <br /> New York, NY
                                 92103-9000
                             </p>
@@ -135,7 +135,7 @@ function Home() {
                     </div>
 
                     <div className="flex items-center gap-4 mt-5">
-                        <div className="border p-2 md:p-3 rounded-full bg-orange-600 text-white">
+                        <div className="border p-2 md:p-3 rounded-full bg-green-600 text-white">
                             <HiOutlineMail className="text-2xl md:text-3xl" />
                         </div>
 
@@ -144,7 +144,7 @@ function Home() {
                             <h3 className="text-sm">
                                 Mon - Fri from 8am to 5am
                             </h3>
-                            <p className="text-orange-600 cursor-pointer">
+                            <p className="text-green-600 cursor-pointer">
                                 +1(555) 000-000
                             </p>
                         </div>
