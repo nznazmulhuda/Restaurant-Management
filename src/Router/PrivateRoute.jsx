@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import useAuth from "../Hooks/useAuth";
 import { Navigate, useLocation } from "react-router-dom";
+import { Loader } from "rsuite";
 
 function PrivateRoute({ children }) {
     const { user, isLoading } = useAuth();
@@ -11,7 +12,11 @@ function PrivateRoute({ children }) {
     }
 
     if (isLoading) {
-        return <h1>Loading...</h1>;
+        return (
+            <div className="flex items-center justify-center mt-5 md:mt-10">
+                <Loader size="lg" content="Loading" className="font-bold" />
+            </div>
+        );
     }
 
     return <Navigate to={"/login"} state={pathname} />;

@@ -1,7 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PropTypes from "prop-types";
 
-const queryClient = new QueryClient();
+// eslint-disable-next-line react-refresh/only-export-components
+export const queryClient = new QueryClient();
 
 function TanstackQuery({ children }) {
     return (

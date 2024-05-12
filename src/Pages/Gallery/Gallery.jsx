@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
-import GalleryCard from "../../Components/GalleryCard";
-import Title from "../../Components/Title";
-import { RiAddLargeFill } from "react-icons/ri";
-import { Modal } from "rsuite";
-import useAuth from "../../Hooks/useAuth";
-import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Modal } from "rsuite";
 import { toast } from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
+import Title from "../../Components/Title";
+import { useEffect, useState } from "react";
+import { RiAddLargeFill } from "react-icons/ri";
+import GalleryCard from "../../Components/GalleryCard";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Gallery() {
     const [gallerys, setGallerys] = useState([]);

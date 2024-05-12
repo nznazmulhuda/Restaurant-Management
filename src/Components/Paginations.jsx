@@ -11,7 +11,7 @@ function Paginations({ total, setActivePage, activePage }) {
                 first
                 size="lg"
                 total={total}
-                limit={10}
+                limit={9}
                 activePage={activePage}
                 onChangePage={setActivePage}
             />

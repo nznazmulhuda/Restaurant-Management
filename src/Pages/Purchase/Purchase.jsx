@@ -11,10 +11,11 @@ function Purchase() {
     const navigate = useNavigate();
     const [food, setFood] = useState([]);
     useEffect(() => {
-        axios.get(`/foods?id=${id}`).then((res) => setFood(res.data[0]));
+        axios.get(`/foods?id=${id}`).then((res) => {
+            setFood(res.data[0]);
+        });
     }, [id]);
     const { url, foodName, foodPrice } = food;
-    const [quentitys, setQuentitys] = useState(null);
     const handlePurchase = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -23,7 +24,8 @@ function Purchase() {
         const quantity = form.quantity.value;
         const name = form.name.value;
         const email = form.email.value;
-        console.log({ foodName, price, quantity, name, email });
+        const time = new Date();
+        console.log({ foodName, price, quantity, name, email, time });
         toast.success("Purchase done!!!");
 
         // api call
@@ -32,8 +34,8 @@ function Purchase() {
     };
     const handlePrice = (e) => {
         const q = e.target.value;
-        const p = parseFloat(foodPrice.slice(1));
-        setQuentitys(q * p);
+        const p = parseFloat(foodPrice.slice(1)).toFixed(2);
+        document.getElementById("price").value = `$ ${q * p}`;
     };
 
     return (
@@ -86,9 +88,10 @@ function Purchase() {
                         <input
                             type="text"
                             name="price"
+                            id="price"
                             placeholder={`Price`}
                             className="outline-none border border-orange-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
-                            defaultValue={"$ " + quentitys}
+                            defaultValue={foodPrice}
                             disabled
                         />
                     </div>
