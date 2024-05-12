@@ -11,11 +11,13 @@ function Purchase() {
     const navigate = useNavigate();
     const [food, setFood] = useState([]);
     const [isQuantity, setIsQuantity] = useState(false);
+    // get data
     useEffect(() => {
         axios.get(`/foods?id=${id}`).then((res) => {
             setFood(res.data[0]);
         });
     }, [id]);
+    // destructureing
     const {
         url,
         foodName,
@@ -25,6 +27,7 @@ function Purchase() {
         email: mail,
         foodQuantity,
     } = food;
+    // handle purchase
     const handlePurchase = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -35,6 +38,7 @@ function Purchase() {
         const email = form.email.value;
         const date = new Date();
         const time = date.toLocaleString();
+        // destructuring
         const food = {
             foodName,
             price,
@@ -46,15 +50,19 @@ function Purchase() {
             authorName,
         };
 
+        // checking user mail and author mail
         if (mail === email) {
             toast.error("This item is yours!");
             navigate(`/food/${_id}`);
         } else if (foodQuantity === 0) {
+            // checking food quantity is zero or not
             setIsQuantity(true);
             return toast.error("This food is unavailable!");
         } else if (foodQuantity < quantity) {
+            // checking food quantity is less than user quantity
             return toast.error("Please decrease your quantity!");
         } else if (mail !== email) {
+            // checking user mail and author mail, also get data
             axios.post(`/purchase-food?id=${_id}`, food).then((res) => {
                 if (res.data.insertedId) {
                     toast.success("Purchase done!!!");
@@ -63,6 +71,7 @@ function Purchase() {
             });
         }
     };
+    // handle price ui when quantity field is onChange
     const handlePrice = (e) => {
         const q = e.target.value;
         const p = parseFloat(foodPrice.slice(1)).toFixed(2);

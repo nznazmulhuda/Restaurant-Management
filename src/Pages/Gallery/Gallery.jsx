@@ -9,24 +9,25 @@ import GalleryCard from "../../Components/GalleryCard";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Gallery() {
-    const [gallerys, setGallerys] = useState([]);
     const { user } = useAuth();
     const navigate = useNavigate();
     const { pathname } = useLocation();
-    const [open, setOpen] = useState(false);
     const [size, setSize] = useState();
+    const [open, setOpen] = useState(false);
+    const [gallerys, setGallerys] = useState([]);
+    // handle modal
     const handleOpen = (value) => {
         setSize(value);
         setOpen(true);
     };
     const handleClose = () => setOpen(false);
+    // handle add gallery card
     const handleAddGalleryCard = () => {
         if (!user) {
             return navigate("/login", { state: pathname });
         }
         return handleOpen(400);
     };
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const addGalleryCard = (e) => {
         e.preventDefault();

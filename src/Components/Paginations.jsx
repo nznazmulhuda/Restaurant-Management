@@ -1,5 +1,5 @@
-import { Pagination } from "rsuite";
 import PropTypes from "prop-types";
+import { Pagination } from "rsuite";
 
 function Paginations({ total, setActivePage, activePage }) {
     return (

@@ -5,9 +5,11 @@ import { Link, useParams } from "react-router-dom";
 function SingleFood() {
     const { id } = useParams();
     const [food, setFood] = useState([]);
+    // get data
     useEffect(() => {
         axios.get(`/foods?id=${id}`).then((res) => setFood(res.data[0]));
     }, [id]);
+    // destructuring
     const {
         _id,
         url,
@@ -18,6 +20,7 @@ function SingleFood() {
         foodCategory,
         name,
     } = food;
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto border rounded-xl p-5 md:p-10 border-green-600 shadow-lg gap-5 md:gap-7">
             <div className="flex items-center">

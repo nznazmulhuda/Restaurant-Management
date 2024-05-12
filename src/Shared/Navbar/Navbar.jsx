@@ -1,20 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
-import { MdRestaurantMenu } from "react-icons/md";
-import { IoIosRestaurant } from "react-icons/io";
 import { toast } from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
+import { IoIosRestaurant } from "react-icons/io";
+import { Link, NavLink } from "react-router-dom";
+import { MdRestaurantMenu } from "react-icons/md";
 
 function Navbar() {
     const { user, logout } = useAuth();
     const [isHover, setIsHover] = useState(false);
     const [isMenus, setIsMenus] = useState(false);
+    // handle logout
     const handleLogout = () => {
         logout()
             .then(() => toast.success("Logout Success!"))
             .catch((e) => toast.error(e.message));
     };
-
+    // navlinks
     const links = (
         <>
             <li>

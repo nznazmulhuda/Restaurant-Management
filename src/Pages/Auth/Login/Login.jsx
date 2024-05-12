@@ -1,20 +1,21 @@
-import { FaGithub, FaGoogle } from "react-icons/fa";
-import Title from "../../../Components/Title";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
 import style from "./Login.module.css";
 import useAuth from "../../../Hooks/useAuth";
-import toast from "react-hot-toast";
-import axios from "axios";
+import Title from "../../../Components/Title";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Login() {
-    const { login, googleLogin, githubLogin } = useAuth();
     const navigate = useNavigate();
     const { state } = useLocation();
+    const { login, googleLogin, githubLogin } = useAuth();
+    // handle register
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
-        const email = form.email.value;
         const pass = form.pass.value;
+        const email = form.email.value;
 
         login(email, pass)
             .then(() => {
@@ -25,7 +26,6 @@ function Login() {
 
         form.reset();
     };
-
     // Login / Register account using google
     const handleGoogle = () => {
         googleLogin()
@@ -42,7 +42,6 @@ function Login() {
             })
             .catch((e) => toast.error(e.message));
     };
-
     // Login / Register account using github
     const handleGithub = () => {
         githubLogin()

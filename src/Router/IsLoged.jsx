@@ -1,6 +1,6 @@
-import { Navigate } from "react-router-dom";
-import useAuth from "../Hooks/useAuth";
 import PropTypes from "prop-types";
+import useAuth from "../Hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 function IsLoged({ children }) {
     const { user } = useAuth();

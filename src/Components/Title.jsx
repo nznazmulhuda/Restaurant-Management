@@ -1,5 +1,5 @@
-import styles from "./Title.module.css";
 import PropTypes from "prop-types";
+import styles from "./Title.module.css";
 
 function Title({ title }) {
     return (

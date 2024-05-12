@@ -1,15 +1,17 @@
-import { Helmet } from "react-helmet-async";
-import TopFood from "../../Components/TopFood";
+import axios from "axios";
+import { Loader } from "rsuite";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import chef from "../../assets/chef.avif";
+import { Helmet } from "react-helmet-async";
 import Banner from "../../Components/Banner";
+import TopFood from "../../Components/TopFood";
 import { HiOutlineMail } from "react-icons/hi";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { useState } from "react";
-import { Loader } from "rsuite";
 
 function Home() {
     const [datas, setDatas] = useState([]);
+    // get data
     const { isPending } = useQuery({
         queryKey: ["nahid"],
         queryFn: () =>
@@ -92,7 +94,7 @@ function Home() {
                     <div className="flex items-center justify-center md:justify-end w-full md:w-1/2 h-[35vh]">
                         <img
                             className="w-[70%] h-full rounded-lg"
-                            src="https://img.freepik.com/free-photo/chef-cooking-kitchen-while-wearing-professional-attire_23-2151208288.jpg"
+                            src={chef}
                             alt=""
                         />
                     </div>

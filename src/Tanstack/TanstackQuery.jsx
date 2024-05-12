@@ -1,5 +1,5 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PropTypes from "prop-types";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const queryClient = new QueryClient();

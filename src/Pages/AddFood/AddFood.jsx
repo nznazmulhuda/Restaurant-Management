@@ -9,12 +9,13 @@ function AddFood() {
     const { user } = useAuth();
     const navigate = useNavigate();
     const [url, setUrl] = useState(null);
-    const [foodName, setFoodName] = useState("Food Name");
-    const [foodCategory, setFoodCategory] = useState("Food Category");
-    const [foodPrice, setFoodPrice] = useState("$Price");
-    const [foodOrigin, setFoodOrigin] = useState("Origin");
     const [foodQuantity, setFoodQuantity] = useState(0);
+    const [foodPrice, setFoodPrice] = useState("$Price");
+    const [foodName, setFoodName] = useState("Food Name");
+    const [foodOrigin, setFoodOrigin] = useState("Origin");
     const [about, setAbout] = useState("About food is here");
+    const [foodCategory, setFoodCategory] = useState("Food Category");
+    // handle add new food
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = user.email;
@@ -30,7 +31,6 @@ function AddFood() {
             email,
             name,
         };
-
         // post food data on database
         axios.post("/foods", food).then((res) => {
             if (res.data.insertedId) {
@@ -38,9 +38,9 @@ function AddFood() {
                 navigate("/foods");
             }
         });
-
         e.target.reset();
     };
+
     return (
         <div>
             <Title title={`Add Food`} />

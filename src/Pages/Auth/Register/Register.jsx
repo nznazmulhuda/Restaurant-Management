@@ -1,16 +1,16 @@
-import { FaGithub, FaGoogle } from "react-icons/fa";
-import Title from "../../../Components/Title";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { PiChefHatDuotone } from "react-icons/pi";
 import useAuth from "../../../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
+import Title from "../../../Components/Title";
+import { PiChefHatDuotone } from "react-icons/pi";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { auth } from "../../../Firebase/Firebase.config";
-import { toast } from "react-hot-toast";
-
-import axios from "axios";
 
 function Register() {
     const { register, googleLogin, githubLogin } = useAuth();
+    // hangle register
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -18,7 +18,6 @@ function Register() {
         const email = form.email.value;
         const photoURL = form.photoURL.value;
         const pass = form.pass.value;
-
         // Register account with email and pass
         register(email, pass)
             .then(() => {
@@ -26,7 +25,6 @@ function Register() {
                     displayName: name,
                     photoURL: photoURL,
                 });
-
                 // Save email and user name on the database
                 const user = { email, name };
                 axios.post("/users", user).then((data) => {
@@ -36,10 +34,8 @@ function Register() {
                 });
             })
             .catch((e) => toast.error(e.message));
-
         form.reset();
     };
-
     // Login / Register account using google
     const handleGoogle = () => {
         googleLogin()
@@ -56,7 +52,6 @@ function Register() {
             })
             .catch((e) => toast.error(e.message));
     };
-
     // Login / Register account using github
     const handleGithub = () => {
         githubLogin()

@@ -1,7 +1,7 @@
+import { Loader } from "rsuite";
 import PropTypes from "prop-types";
 import useAuth from "../Hooks/useAuth";
 import { Navigate, useLocation } from "react-router-dom";
-import { Loader } from "rsuite";
 
 function PrivateRoute({ children }) {
     const { user, isLoading } = useAuth();
