@@ -18,7 +18,6 @@ function Navbar() {
                     if (res.data.success) {
                         toast.success("Logout Success!");
                     }
-                    console.log(res);
                 });
             })
             .catch((e) => toast.error(e.message));
@@ -26,7 +25,7 @@ function Navbar() {
     // navlinks
     const links = (
         <>
-            <li>
+            <li className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/"}
                     className={({ isActive }) =>
@@ -39,7 +38,7 @@ function Navbar() {
                 </NavLink>
             </li>
 
-            <li>
+            <li className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/foods"}
                     className={({ isActive }) =>
@@ -52,7 +51,7 @@ function Navbar() {
                 </NavLink>
             </li>
 
-            <li>
+            <li className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/gallery"}
                     className={({ isActive }) =>
@@ -72,12 +71,14 @@ function Navbar() {
             className={`border-b-2 rounded-lg lg:rounded-[50px] py-2  border-b-green-500 shadow-lg px-4 mb-10 bg-white`}
         >
             <div className="grid grid-cols-3 items-center relative container mx-auto">
+                {/* Routes */}
                 <div className="hidden md:flex">
                     <ul className="flex items-center gap-5 md:gap-10 flex-col md:flex-row">
                         {links}
                     </ul>
                 </div>
 
+                {/* Responsive links */}
                 <div className="flex md:hidden">
                     <button className="rotate-90 text-2xl">
                         {isMenus ? (
@@ -92,6 +93,7 @@ function Navbar() {
                     </button>
                 </div>
 
+                {/* Responsive links */}
                 <div
                     className={`absolute ${
                         isMenus ? "flex" : "hidden"
@@ -111,7 +113,11 @@ function Navbar() {
                     </div>
                 </div>
 
-                <Link to={"/"} className="flex items-center justify-center">
+                {/* logo */}
+                <Link
+                    to={"/"}
+                    className="flex items-center justify-center animate__animated animate__fadeInDown"
+                >
                     <div className="w-14 md:w-16 lg:w-20">
                         <img
                             className="w-full h-full cursor-pointer"
@@ -121,11 +127,12 @@ function Navbar() {
                     </div>
                 </Link>
 
+                {/* Login / User & Logout */}
                 <div className="flex items-center justify-end">
                     {user ? (
                         <div className="flex items-center gap-5">
                             <div
-                                className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16  border-2 border-green-600 rounded-full cursor-pointer"
+                                className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16  border-2 border-green-600 rounded-full cursor-pointer animate__animated animate__fadeInRight"
                                 onClick={() => setIsHover(!isHover)}
                             >
                                 <img
@@ -134,7 +141,7 @@ function Navbar() {
                                     alt="profilePic"
                                 />
                             </div>
-                            <div className="hidden md:flex">
+                            <div className="hidden md:flex animate__animated animate__fadeInRight">
                                 <button
                                     className="border border-green-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-green-600 transition-all"
                                     onClick={handleLogout}
@@ -145,31 +152,37 @@ function Navbar() {
                         </div>
                     ) : (
                         <Link to={"/login"}>
-                            <button className="border border-green-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-green-600 transition-all text-black">
+                            <button className="border border-green-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-green-600 transition-all text-black animate__animated animate__fadeInRight">
                                 Login
                             </button>
                         </Link>
                     )}
                 </div>
 
+                {/* Private routes */}
                 <div
-                    className={`absolute top-full right-0 flex-col gap-2 items-end border p-4 rounded-lg bg-gradient-to-br from-green-100 to-red-100 mt-3 z-[9999] ${
+                    className={`absolute top-full right-0 flex-col gap-2 items-end border p-4 rounded-lg bg-gradient-to-br from-green-100 to-red-100 mt-3 z-[999999] animate__animated animate__fadeInDown ${
                         isHover ? "flex" : "hidden"
                     }`}
                 >
                     <Link
+                        onClick={() => setIsHover(false)}
                         to={"/my-food-item"}
                         className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         My added food items
                     </Link>
+
                     <Link
+                        onClick={() => setIsHover(false)}
                         to={"/add-food"}
                         className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >
                         Add a food items
                     </Link>
+
                     <Link
+                        onClick={() => setIsHover(false)}
                         to={"/my-ordered-food"}
                         className="font-semibold border w-full text-right py-1 px-3 rounded-lg bg-white text-black"
                     >

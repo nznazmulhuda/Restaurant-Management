@@ -47,7 +47,7 @@ function MyOrderedCard({ food, refetch }) {
     };
 
     return (
-        <div>
+        <div className="animate__animated animate__fadeInUp">
             <div className="flex  items-center gap-5 md:gap-10 p-4 border rounded-xl shadow-lg">
                 <div className="w-32 md:w-36">
                     <img className="w-full h-full" src={url} alt="" />
@@ -80,7 +80,6 @@ function MyOrderedCard({ food, refetch }) {
                     </div>
                 </div>
             </div>
-            ;
         </div>
     );
 }

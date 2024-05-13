@@ -81,14 +81,16 @@ function Purchase() {
 
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | Purchase</title>
             </Helmet>
 
+            {/* banner for title */}
             <Title title={"Purchase"} />
 
-            <div className="flex justify-center flex-col md:flex-row container mx-auto mt-10 items-center gap-5 md:gap-8">
-                <div className="grid grid-cols-1 container mx-auto rounded-xl gap-5 md:gap-7">
+            <div className="flex justify-center flex-col md:flex-row container mx-auto mt-10 items-center gap-5 md:gap-8 border border-green-600 rounded-xl p-5 md:p-10 animate__animated animate__fadeInUp">
+                <div className="grid grid-cols-1 container mx-auto rounded-xl gap-5 md:gap-7 animate__animated animate__fadeInLeft animate__delay-1s">
                     <div className="flex items-center">
                         <div className="w-full md:h-[40vh] relative overflow-hidden rounded-lg">
                             <img
@@ -124,7 +126,10 @@ function Purchase() {
                     </div>
                 </div>
 
-                <form onSubmit={handlePurchase} className="container mx-auto">
+                <form
+                    onSubmit={handlePurchase}
+                    className="container mx-auto animate__animated animate__fadeInRight animate__delay-1s"
+                >
                     <div className="mb-5">
                         <label htmlFor="Food name">Food Name</label>
                         <input

@@ -28,13 +28,15 @@ function MyOrderedFood() {
 
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | My Order</title>
             </Helmet>
 
+            {/* banner for title */}
             <Title title={"Foods are you added"} />
 
-            <div className="container mx-auto mt-10">
+            <div className="container mx-auto mt-10 space-y-5">
                 {foods.length ? (
                     foods.map((food) => (
                         <MyOrderedCard

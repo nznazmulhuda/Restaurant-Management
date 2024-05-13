@@ -39,15 +39,18 @@ function AllFood() {
 
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | All Food</title>
             </Helmet>
+
+            {/* banner for title */}
             <Title title={"All Foods"} />
 
             {/* Search functionality */}
             <form
                 onSubmit={handleSearch}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center animate__animated animate__fadeInDown animate__delay-1s"
             >
                 <div className="flex justify-between items-center px-3 mt-10 border border-green-600 md:w-[40%] rounded-lg shadow-lg">
                     <input

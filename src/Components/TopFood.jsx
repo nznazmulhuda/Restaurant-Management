@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 function TopFood({ data }) {
     const { url, _id, foodName, foodCategory, foodPrice } = data;
     return (
-        <div className="border-2 border-green-300 shadow-lg p-3 rounded-lg">
+        <div
+            className="border-2 border-green-300 shadow-lg p-3 rounded-lg"
+            data-aos="fade-up"
+        >
             <div className="h-[40vh] relative overflow-hidden rounded-lg">
                 <img
                     className="w-full h-full rounded-lg absolute hover:transform hover:scale-[1.04] transition-all cursor-pointer"

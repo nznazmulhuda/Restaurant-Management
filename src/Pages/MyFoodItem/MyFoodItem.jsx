@@ -40,13 +40,16 @@ function MyFoodItem() {
 
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | My Food</title>
             </Helmet>
+
+            {/* banner for title */}
             <Title title={"Food you are added"} />
 
             <div className="container mx-auto mt-10 grid md:grid-cols-4 gap-5 md:gap-10">
-                <div className="md:col-span-3">
+                <div className="md:col-span-3 space-y-5">
                     {foods.length ? (
                         foods.map((data) => (
                             <MyFoodCard data={data} key={data._id} />
@@ -77,7 +80,7 @@ function MyFoodItem() {
                     )}
                 </div>
 
-                <div>
+                <div className="animate__animated animate__fadeInRight">
                     <div className="border md:col-span-1 rounded-xl p-5 md:p-10">
                         <div className=" flex items-center justify-center">
                             <img

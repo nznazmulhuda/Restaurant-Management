@@ -99,19 +99,17 @@ function UpdateItem() {
 
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | Update</title>
             </Helmet>
 
+            {/* banner for title */}
             <Title title={`Update`} />
-            {isPending && (
-                <div className="flex items-center justify-center mt-5 md:mt-10">
-                    <Loader size="lg" content="Loading" className="font-bold" />
-                </div>
-            )}
+
             <div className="container mx-auto mt-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 items-center">
-                    <div className="w-full mb-5 md:mb-0">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 items-center border border-green-600 rounded-xl p-5 md:p-10 animate__animated animate__fadeInUp">
+                    <div className="w-full mb-5 md:mb-0 animate__animated animate__fadeInLeft animate__delay-1s">
                         <h3 className="text-center mb-5">Preview</h3>
                         <div className="border rounded-xl p-5 w-full">
                             <div className="w-full h-[20vh]">
@@ -153,7 +151,10 @@ function UpdateItem() {
                         </div>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="col-span-2">
+                    <form
+                        onSubmit={handleSubmit}
+                        className="col-span-2 animate__animated animate__fadeInRight animate__delay-1s"
+                    >
                         <div className="mb-5">
                             <label htmlFor="Food Image">Food Image</label>
                             <input
@@ -238,6 +239,11 @@ function UpdateItem() {
                     </form>
                 </div>
             </div>
+            {isPending && (
+                <div className="flex items-center justify-center mt-5 md:mt-10">
+                    <Loader size="lg" content="Loading" className="font-bold" />
+                </div>
+            )}
         </div>
     );
 }

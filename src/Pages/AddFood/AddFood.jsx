@@ -44,14 +44,17 @@ function AddFood() {
 
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | Add Food</title>
             </Helmet>
+
+            {/* banner for title */}
             <Title title={`Add Food`} />
 
             <div className="container mx-auto mt-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 md:gap-10 items-center justify-center">
-                    <div className="w-full mb-5 md:mb-0">
+                    <div className="w-full mb-5 md:mb-0 animate__animated animate__fadeInLeft">
                         <h3 className="text-center mb-5">Preview</h3>
                         <div className="border rounded-xl p-5 w-full">
                             <div className="w-full h-[20vh]">
@@ -88,7 +91,10 @@ function AddFood() {
                         </div>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="col-span-2">
+                    <form
+                        onSubmit={handleSubmit}
+                        className="col-span-2 animate__animated animate__fadeInRight"
+                    >
                         <div className="mb-5">
                             <label htmlFor="Food Image">Food Image</label>
                             <input

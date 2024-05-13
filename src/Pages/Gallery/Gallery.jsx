@@ -34,14 +34,14 @@ function Gallery() {
         setOpen(true);
     };
     const handleClose = () => setOpen(false);
-    // handle add gallery card
+    // handle add gallery card's modal
     const handleAddGalleryCard = () => {
         if (!user) {
             return navigate("/login", { state: pathname });
         }
         return handleOpen(400);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // handle add gallery card
     const addGalleryCard = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -60,15 +60,18 @@ function Gallery() {
         handleClose();
         e.target.reset();
     };
-    //
+
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | Gallery</title>
             </Helmet>
-            
+
+            {/* Banner for title */}
             <Title title={"Gallery"} />
 
+            {/* Gallery card's data input field */}
             <Modal size={size} open={open} onClose={handleClose}>
                 <Modal.Header>
                     <Modal.Title>Add new card</Modal.Title>

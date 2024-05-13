@@ -96,15 +96,17 @@ function Register() {
 
     return (
         <div>
+            {/* Title for this page */}
             <Helmet>
                 <title>Dish Dash | Register</title>
             </Helmet>
 
+            {/* Banner for title */}
             <Title title={"Register"} />
 
             <div className="container mx-auto mt-10 flex items-center justify-center">
-                <div className="flex items-center gap-10 md:gap-16 flex-col-reverse md:flex-row">
-                    <div className="border p-5 md:p-10 rounded-xl border-green-600 shadow-xl md:w-[50%]">
+                <div className="flex items-center gap-10 md:gap-16 flex-col-reverse md:flex-row w-full">
+                    <div className="border p-5 md:p-10 rounded-xl border-green-600 shadow-xl md:w-[50%] animate__animated animate__fadeInLeft">
                         <form onSubmit={handleRegister}>
                             <div className="mb-5 md:mb-10">
                                 <label htmlFor="name">
@@ -199,7 +201,7 @@ function Register() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="animate__animated animate__fadeInRight">
                         <h3 className="text-black">Create Account</h3>
                         <p>What you will get?</p>
 

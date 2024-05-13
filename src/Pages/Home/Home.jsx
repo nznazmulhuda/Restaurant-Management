@@ -24,14 +24,16 @@ function Home() {
     });
     return (
         <div className="container mx-auto">
+            {/* page title */}
             <Helmet>
                 <title>Dish Dash | Home</title>
             </Helmet>
 
+            {/* banner section */}
             <Banner />
 
             <div>
-                <h1 className="mt-10 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-5 text-black">
+                <h1 className="mt-10 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-5 text-black animate__animated animate__fadeInDown animate__delay-1s">
                     Top Foods
                 </h1>
 
@@ -62,8 +64,11 @@ function Home() {
             </div>
 
             <div className="mt-10">
-                <div className="flex items-center justify-between flex-col-reverse md:flex-row gap-3 border px-4 md:px-20 py-3 md:py-5 rounded-xl border-green-600 shadow-lg text-black">
-                    <div className="md:w-1/2">
+                <div
+                    className="flex items-center justify-between flex-col-reverse md:flex-row gap-3 border px-4 md:px-20 py-3 md:py-5 rounded-xl border-green-600 shadow-lg text-black"
+                    data-aos="fade-down"
+                >
+                    <div className="md:w-1/2" data-aos="fade-right">
                         <h1 className="text-xl font-bold">OUR MISSION</h1>
                         <h1 className="text-2xl font-bold mt-3 mb-2">
                             Chefs team
@@ -91,7 +96,10 @@ function Home() {
                         </p>
                     </div>
 
-                    <div className="flex items-center justify-center md:justify-end w-full md:w-1/2 h-[35vh]">
+                    <div
+                        className="flex items-center justify-center md:justify-end w-full md:w-1/2 h-[35vh]"
+                        data-aos="fade-left"
+                    >
                         <img
                             className="w-[70%] h-full rounded-lg"
                             src={chef}
@@ -101,12 +109,21 @@ function Home() {
                 </div>
             </div>
 
-            <h1 className="mt-10 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-5">
+            <h1
+                className="mt-10 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-5"
+                data-aos="fade-down"
+            >
                 Contact Information
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full items-center border border-green-600 rounded-xl px-10 md:px-20 py-10 shadow-lg text-black">
-                <div className="flex flex-col items-center md:items-start">
+            <div
+                className="grid grid-cols-1 md:grid-cols-2 w-full items-center border border-green-600 rounded-xl px-10 md:px-20 py-10 shadow-lg text-black"
+                data-aos="fade-down"
+            >
+                <div
+                    className="flex flex-col items-center md:items-start"
+                    data-aos="fade-right"
+                >
                     <div className="flex flex-col items-center justify-center w-32 md:w-36 h-32 md:h-36 border rounded-full bg-green-600 text-white font-bold">
                         <h1 className="text-2xl md:text-3xl">40%</h1>
                         <h5 className="text-center text-sm px-4">
@@ -123,7 +140,7 @@ function Home() {
                     </button>
                 </div>
 
-                <div className="mt-2 md:mt-0">
+                <div className="mt-2 md:mt-0" data-aos="fade-left">
                     <div className="flex items-center gap-4">
                         <div className="border p-2 md:p-3 rounded-full bg-green-600 text-white">
                             <HiOutlineMail className="text-2xl md:text-3xl" />

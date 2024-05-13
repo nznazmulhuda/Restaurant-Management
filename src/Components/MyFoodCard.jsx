@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function MyFoodCard({ data }) {
     const { foodName, foodPrice, _id, url } = data;
     return (
-        <div>
+        <div className={`animate__animated animate__fadeInLeft`}>
             <div className="flex items-center gap-5 md:gap-10 p-4 border rounded-xl shadow-lg">
                 <div className="w-32 md:w-36">
                     <img className="w-full h-full" src={url} alt="" />
@@ -25,7 +25,6 @@ function MyFoodCard({ data }) {
                     </Link>
                 </div>
             </div>
-            ;
         </div>
     );
 }

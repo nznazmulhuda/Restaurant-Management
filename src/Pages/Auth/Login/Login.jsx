@@ -83,15 +83,17 @@ function Login() {
 
     return (
         <div>
+            {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | Login</title>
             </Helmet>
 
+            {/* Banner for title */}
             <Title title={"Login"} />
 
             <div className="container mx-auto mt-10 flex items-center justify-center">
                 <div className="flex w-full items-center gap-10 md:gap-16 flex-col-reverse md:flex-row">
-                    <div className="border p-5 md:p-10 rounded-xl border-green-600 shadow-xl md:w-[50%]">
+                    <div className="border p-5 md:p-10 rounded-xl border-green-600 shadow-xl md:w-[50%] animate__animated animate__fadeInLeft">
                         <form onSubmit={handleRegister}>
                             <div className="mb-5 md:mb-10">
                                 <label htmlFor="email">
@@ -160,7 +162,7 @@ function Login() {
                     </div>
 
                     <div
-                        className={`${style.login} w-full md:w-3/4 h-[30vh] md:h-[37vh] lg:h-[43vh]`}
+                        className={`${style.login} w-full md:w-3/4 h-[30vh] md:h-[37vh] lg:h-[43vh] animate__animated animate__fadeInRight`}
                     >
                         <div className="flex items-start md:items-end h-full">
                             <div className="p-5 md:p-10">

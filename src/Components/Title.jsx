@@ -4,12 +4,16 @@ import styles from "./Title.module.css";
 function Title({ title }) {
     return (
         <>
-            <div className="relative">
-                <div className={`${styles.title}`}></div>
+            <div className="relative w-full h-full">
+                <div
+                    className={`${styles.title} animate__animated animate__fadeIn`}
+                ></div>
 
-                <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-bold text-2xl md:text-4xl text-center">
-                    {title}
-                </h1>
+                <div className="w-full h-full absolute top-0 flex items-center justify-center">
+                    <h1 className="text-white font-bold text-2xl md:text-4xl text-center animate__animated animate__fadeInDown animate__delay-1s">
+                        {title}
+                    </h1>
+                </div>
             </div>
         </>
     );

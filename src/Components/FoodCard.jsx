@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 function FoodCard({ food }) {
     const { _id, url, foodName, foodCategory, foodPrice, foodQuantity } = food;
     return (
-        <div className="border border-green-600 rounded-lg p-3 md:p-4">
+        <div
+            className="border border-green-600 rounded-lg p-3 md:p-4"
+            data-aos="fade-down"
+        >
             <div className="w-full h-[40vh] relative overflow-hidden rounded-lg">
                 <img
                     className="w-full h-full absolute hover:scale-[1.05] rounded-lg transition-all hover:transform "
