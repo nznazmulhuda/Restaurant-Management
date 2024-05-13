@@ -4,6 +4,7 @@ import Title from "../../Components/Title";
 import { useEffect, useState } from "react";
 import FoodCard from "../../Components/FoodCard";
 import Paginations from "../../Components/Paginations";
+import { Helmet } from "react-helmet-async";
 
 function AllFood() {
     const [foods, setFoods] = useState([]);
@@ -38,6 +39,9 @@ function AllFood() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | All Food</title>
+            </Helmet>
             <Title title={"All Foods"} />
 
             {/* Search functionality */}

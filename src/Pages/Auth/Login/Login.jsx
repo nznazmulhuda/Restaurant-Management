@@ -5,6 +5,7 @@ import useAuth from "../../../Hooks/useAuth";
 import Title from "../../../Components/Title";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Login() {
     const navigate = useNavigate();
@@ -82,6 +83,10 @@ function Login() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | Login</title>
+            </Helmet>
+
             <Title title={"Login"} />
 
             <div className="container mx-auto mt-10 flex items-center justify-center">

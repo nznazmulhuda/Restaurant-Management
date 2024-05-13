@@ -6,6 +6,7 @@ import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
 import MyOrderedCard from "../../Components/MyOrderedCard";
+import { Helmet } from "react-helmet-async";
 
 function MyOrderedFood() {
     const { user } = useAuth();
@@ -27,6 +28,10 @@ function MyOrderedFood() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | My Order</title>
+            </Helmet>
+
             <Title title={"Foods are you added"} />
 
             <div className="container mx-auto mt-10">

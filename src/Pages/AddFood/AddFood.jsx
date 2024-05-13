@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import Title from "../../Components/Title";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 function AddFood() {
     const { user } = useAuth();
@@ -43,6 +44,9 @@ function AddFood() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | Add Food</title>
+            </Helmet>
             <Title title={`Add Food`} />
 
             <div className="container mx-auto mt-10">

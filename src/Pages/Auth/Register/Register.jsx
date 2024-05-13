@@ -7,6 +7,7 @@ import Title from "../../../Components/Title";
 import { PiChefHatDuotone } from "react-icons/pi";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { auth } from "../../../Firebase/Firebase.config";
+import { Helmet } from "react-helmet-async";
 
 function Register() {
     const { register, googleLogin, githubLogin } = useAuth();
@@ -95,6 +96,10 @@ function Register() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | Register</title>
+            </Helmet>
+
             <Title title={"Register"} />
 
             <div className="container mx-auto mt-10 flex items-center justify-center">

@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import Title from "../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function UpdateItem() {
     const { id } = useParams();
@@ -98,6 +99,10 @@ function UpdateItem() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | Update</title>
+            </Helmet>
+
             <Title title={`Update`} />
             {isPending && (
                 <div className="flex items-center justify-center mt-5 md:mt-10">

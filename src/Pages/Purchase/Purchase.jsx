@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Purchase() {
     const { id } = useParams();
@@ -80,6 +81,10 @@ function Purchase() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | Purchase</title>
+            </Helmet>
+
             <Title title={"Purchase"} />
 
             <div className="flex justify-center flex-col md:flex-row container mx-auto mt-10 items-center gap-5 md:gap-8">

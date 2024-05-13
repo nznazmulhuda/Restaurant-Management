@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 
 function SingleFood() {
@@ -23,6 +24,9 @@ function SingleFood() {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto border rounded-xl p-5 md:p-10 border-green-600 shadow-lg gap-5 md:gap-7">
+            <Helmet>
+                <title>Dish Dash | Single Food</title>
+            </Helmet>
             <div className="flex items-center">
                 <div className="w-full md:h-[60vh] lg:h-[50vh] relative overflow-hidden rounded-lg">
                     <img

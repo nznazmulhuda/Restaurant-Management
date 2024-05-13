@@ -25,7 +25,7 @@ function Home() {
     return (
         <div className="container mx-auto">
             <Helmet>
-                <title>Dish Dish | Home</title>
+                <title>Dish Dash | Home</title>
             </Helmet>
 
             <Banner />

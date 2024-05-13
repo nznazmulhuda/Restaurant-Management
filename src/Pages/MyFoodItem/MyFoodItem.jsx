@@ -7,6 +7,7 @@ import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
 import MyFoodCard from "../../Components/MyFoodCard";
+import { Helmet } from "react-helmet-async";
 
 function MyFoodItem() {
     const { user, logout } = useAuth();
@@ -39,6 +40,9 @@ function MyFoodItem() {
 
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | My Food</title>
+            </Helmet>
             <Title title={"Food you are added"} />
 
             <div className="container mx-auto mt-10 grid md:grid-cols-4 gap-5 md:gap-10">

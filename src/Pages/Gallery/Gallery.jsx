@@ -8,6 +8,7 @@ import { RiAddLargeFill } from "react-icons/ri";
 import { useQuery } from "@tanstack/react-query";
 import GalleryCard from "../../Components/GalleryCard";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Gallery() {
     const { user } = useAuth();
@@ -62,6 +63,10 @@ function Gallery() {
     //
     return (
         <div>
+            <Helmet>
+                <title>Dish Dash | Gallery</title>
+            </Helmet>
+            
             <Title title={"Gallery"} />
 
             <Modal size={size} open={open} onClose={handleClose}>
