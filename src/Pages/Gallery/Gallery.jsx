@@ -1,10 +1,11 @@
 import axios from "axios";
-import { Modal } from "rsuite";
+import { Loader, Modal } from "rsuite";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
-import { useEffect, useState } from "react";
 import { RiAddLargeFill } from "react-icons/ri";
+import { useQuery } from "@tanstack/react-query";
 import GalleryCard from "../../Components/GalleryCard";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -15,6 +16,17 @@ function Gallery() {
     const [size, setSize] = useState();
     const [open, setOpen] = useState(false);
     const [gallerys, setGallerys] = useState([]);
+    // get all gallery data
+    const { isPending, refetch } = useQuery({
+        queryKey: ["foodGallery"],
+        queryFn: () =>
+            axios.get("/gallery").then((data) => {
+                if (data.data) {
+                    setGallerys(data.data.reverse());
+                }
+                return data;
+            }),
+    });
     // handle modal
     const handleOpen = (value) => {
         setSize(value);
@@ -37,20 +49,17 @@ function Gallery() {
         const data = { name, imageUrl, feedback };
 
         // store gallery data on the database
-        axios
-            .post("/gallery", data)
-            .then(
-                (res) => res.data.insertedId && toast.success("Added success!")
-            );
+        axios.post("/gallery", data).then((res) => {
+            if (res.data.insertedId) {
+                toast.success("Added success!");
+                refetch();
+            }
+        });
 
         handleClose();
         e.target.reset();
     };
-
-    useEffect(() => {
-        axios.get("/gallery").then((res) => setGallerys(res.data.reverse()));
-    }, [addGalleryCard]);
-
+    //
     return (
         <div>
             <Title title={"Gallery"} />
@@ -112,6 +121,15 @@ function Gallery() {
                 {gallerys.map((gallery) => (
                     <GalleryCard key={gallery._id} gallery={gallery} />
                 ))}
+                {isPending && (
+                    <div className="flex items-center justify-center mt-5 md:mt-10">
+                        <Loader
+                            size="lg"
+                            content="Loading"
+                            className="font-bold"
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );

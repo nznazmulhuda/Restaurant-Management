@@ -9,28 +9,31 @@ function AllFood() {
     const [foods, setFoods] = useState([]);
     const [totalPage, setTotalPage] = useState(null);
     const [activePage, setActivePage] = useState(1);
+    const [searchTerm, setSearchTerm] = useState("");
     // Search Function
-    const handleSearch = (e) => {
+    function handleSearch(e) {
         e.preventDefault();
         const search = e.target.search.value;
-
-        // get search foo
-        axios.get(`/foods?search=${search}`).then((res) => setFoods(res.data));
+        setSearchTerm(search);
         e.target.reset();
-    };
+    }
+    // get search data
+    useEffect(() => {
+        axios.get(`/search?search=${searchTerm || "all"}`).then((res) => {
+            setFoods(res.data);
+        });
+    }, [searchTerm]);
     // get total page number
     useEffect(() => {
         axios
-            .get(`foods?page=${true}`)
+            .get(`/foods?page=${true}`)
             .then((res) => setTotalPage(res.data.pages));
     }, []);
     // get limited data according page number
     useEffect(() => {
-        axios
-            .get(`/foods?activePage=${activePage}&pageNo=${activePage}`)
-            .then((res) => {
-                setFoods(res.data);
-            });
+        axios.get(`/foods?activePage=${activePage}`).then((res) => {
+            setFoods(res.data);
+        });
     }, [activePage]);
 
     return (
@@ -48,6 +51,7 @@ function AllFood() {
                         name="search"
                         placeholder="Food name..."
                         className="outline-none flex-1 border-none py-2 px-3"
+                        onChange={(e) => setSearchTerm(e.target.value)}
                         required
                     />
                     <button>
