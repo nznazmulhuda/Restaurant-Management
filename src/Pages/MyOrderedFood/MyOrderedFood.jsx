@@ -14,10 +14,15 @@ function MyOrderedFood() {
     const { isPending, refetch } = useQuery({
         queryKey: ["myOrder"],
         queryFn: () =>
-            axios.get(`/purchase-food?email=${user.email}`).then((data) => {
-                setFoods(data.data);
-                return data.data;
-            }),
+            axios
+                .get(`/purchase-food/${user.email}`, {
+                    withCredentials: true,
+                })
+                .then((data) => {
+                    setFoods(data.data);
+                    console.log(data);
+                    return data.data;
+                }),
     });
 
     return (

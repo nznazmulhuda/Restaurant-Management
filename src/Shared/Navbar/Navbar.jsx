@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
@@ -12,7 +13,14 @@ function Navbar() {
     // handle logout
     const handleLogout = () => {
         logout()
-            .then(() => toast.success("Logout Success!"))
+            .then(() => {
+                axios.get("/logout", { withCredentials: true }).then((res) => {
+                    if (res.data.success) {
+                        toast.success("Logout Success!");
+                    }
+                    console.log(res);
+                });
+            })
             .catch((e) => toast.error(e.message));
     };
     // navlinks

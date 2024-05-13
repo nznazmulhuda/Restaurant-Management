@@ -15,17 +15,25 @@ function MyFoodItem() {
     const { isPending } = useQuery({
         queryKey: ["myFood"],
         queryFn: () =>
-            axios.get(`/foods?email=${user?.email}`).then((data) => {
-                if (data) {
-                    setFoods(data.data);
-                }
-                return data.data;
-            }),
+            axios
+                .get(`/myFood/${user?.email}`, { withCredentials: true })
+                .then((data) => {
+                    if (data) {
+                        setFoods(data.data);
+                    }
+                    return data.data;
+                }),
     });
     // handle logout
     const handleLogout = () => {
         logout()
-            .then(() => toast.success("Success logout!"))
+            .then(() =>
+                axios.get("/logout", { withCredentials: true }).then((res) => {
+                    if (res.data.success) {
+                        toast.success("Logout Success!");
+                    }
+                })
+            )
             .catch((e) => toast.error(e.message));
     };
 

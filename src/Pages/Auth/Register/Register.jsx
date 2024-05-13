@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import Title from "../../../Components/Title";
@@ -10,6 +10,8 @@ import { auth } from "../../../Firebase/Firebase.config";
 
 function Register() {
     const { register, googleLogin, githubLogin } = useAuth();
+    const navigate = useNavigate();
+    const { state } = useLocation();
     // hangle register
     const handleRegister = (e) => {
         e.preventDefault();
@@ -32,6 +34,14 @@ function Register() {
                         toast.success("Account created!");
                     }
                 });
+                axios
+                    .post("/token", { email }, { withCredentials: true })
+                    .then((res) => {
+                        if (res.data.success) {
+                            toast.success("Welcome back!");
+                            navigate(state ? state : "/");
+                        }
+                    });
             })
             .catch((e) => toast.error(e.message));
         form.reset();
@@ -49,6 +59,13 @@ function Register() {
                         toast.success("Google login success!");
                     }
                 });
+                axios
+                    .post("/token", { email }, { withCredentials: true })
+                    .then((res) => {
+                        if (res.data.success) {
+                            navigate(state ? state : "/");
+                        }
+                    });
             })
             .catch((e) => toast.error(e.message));
     };
@@ -65,6 +82,13 @@ function Register() {
                         toast.success("Github login success!");
                     }
                 });
+                axios
+                    .post("/token", { email }, { withCredentials: true })
+                    .then((res) => {
+                        if (res.data.success) {
+                            navigate(state ? state : "/");
+                        }
+                    });
             })
             .catch((e) => toast.error(e.message));
     };

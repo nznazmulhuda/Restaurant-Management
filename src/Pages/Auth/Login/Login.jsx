@@ -16,11 +16,18 @@ function Login() {
         const form = e.target;
         const pass = form.pass.value;
         const email = form.email.value;
+        const user = { email };
 
         login(email, pass)
             .then(() => {
-                toast.success("Welcome back!");
-                navigate(state ? state : "/");
+                axios
+                    .post("/token", user, { withCredentials: true })
+                    .then((res) => {
+                        if (res.data.success) {
+                            toast.success("Welcome back!");
+                            navigate(state ? state : "/");
+                        }
+                    });
             })
             .catch((e) => toast.error(e.message));
 
@@ -39,6 +46,13 @@ function Login() {
                         toast.success("Google login success!");
                     }
                 });
+                axios
+                    .post("/token", { email }, { withCredentials: true })
+                    .then((res) => {
+                        if (res.data.success) {
+                            navigate(state ? state : "/");
+                        }
+                    });
             })
             .catch((e) => toast.error(e.message));
     };
@@ -55,6 +69,13 @@ function Login() {
                         toast.success("Github login success!");
                     }
                 });
+                axios
+                    .post("/token", { email }, { withCredentials: true })
+                    .then((res) => {
+                        if (res.data.success) {
+                            navigate(state ? state : "/");
+                        }
+                    });
             })
             .catch((e) => toast.error(e.message));
     };
