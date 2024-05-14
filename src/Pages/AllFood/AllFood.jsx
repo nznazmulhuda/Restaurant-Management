@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import FoodCard from "../../Components/FoodCard";
 import Paginations from "../../Components/Paginations";
 import { Helmet } from "react-helmet-async";
+import Filter from "../../Components/Filter";
 
 function AllFood() {
     const [foods, setFoods] = useState([]);
@@ -38,7 +39,7 @@ function AllFood() {
     }, [activePage]);
 
     return (
-        <div>
+        <div className="w-full">
             {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | All Food</title>
@@ -48,24 +49,30 @@ function AllFood() {
             <Title title={"All Foods"} />
 
             {/* Search functionality */}
-            <form
-                onSubmit={handleSearch}
-                className="flex items-center justify-center animate__animated animate__fadeInDown animate__delay-1s"
-            >
-                <div className="flex justify-between items-center px-3 mt-10 border border-green-600 md:w-[40%] rounded-lg shadow-lg">
-                    <input
-                        type="search"
-                        name="search"
-                        placeholder="Food name..."
-                        className="outline-none flex-1 border-none py-2 px-3"
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        required
-                    />
-                    <button>
-                        <FaSearch className="text-green-600 text-lg cursor-pointer" />
-                    </button>
+            <div className="flex justify-between flex-col md:flex-row items-center container mx-auto mt-10">
+                <form
+                    onSubmit={handleSearch}
+                    className="flex items-center justify-center w-[90%] md:w-[70%] px-3 border border-green-600 rounded-lg shadow-lg mb-5 md:mb-0 animate__animated animate__fadeInDown animate__delay-1s"
+                >
+                    <div className="flex justify-between items-center w-full">
+                        <input
+                            type="search"
+                            name="search"
+                            placeholder="Food name..."
+                            className="outline-none flex-1 border-none py-2 px-3 w-full md:h-[4vh]"
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            required
+                        />
+                        <button>
+                            <FaSearch className="text-green-600 text-lg cursor-pointer" />
+                        </button>
+                    </div>
+                </form>
+
+                <div>
+                    <Filter setFoods={setFoods} />
                 </div>
-            </form>
+            </div>
 
             {/* All Food */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 container mx-auto mt-10">
