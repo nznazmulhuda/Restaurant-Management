@@ -21,7 +21,6 @@ function MyOrderedFood() {
                 })
                 .then((data) => {
                     setFoods(data.data);
-                    console.log(data);
                     return data.data;
                 }),
     });
