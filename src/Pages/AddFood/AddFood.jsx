@@ -98,6 +98,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="Food Image">Food Image</label>
                             <input
+                                required
                                 type="url"
                                 name="foodImageUrl"
                                 placeholder="Food image URL"
@@ -109,6 +110,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="Food Name">Food Name</label>
                             <input
+                                required
                                 type="text"
                                 name="foodName"
                                 placeholder="Food Name"
@@ -120,6 +122,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="Food Category">Food Category</label>
                             <input
+                                required
                                 type="text"
                                 name="category"
                                 placeholder="Food category"
@@ -133,6 +136,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="Food Price">Food Price</label>
                             <input
+                                required
                                 type="text"
                                 name="price"
                                 placeholder="Food price"
@@ -144,6 +148,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="Food Quantity">Food Quantity</label>
                             <input
+                                required
                                 type="number"
                                 name="quantity"
                                 placeholder="Food quantity"
@@ -157,6 +162,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="origin">Food Origin</label>
                             <input
+                                required
                                 type="text"
                                 name="origin"
                                 placeholder="Tell us about your food"
@@ -179,6 +185,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="email">Email</label>
                             <input
+                                required
                                 type="email"
                                 name="aboutFood"
                                 placeholder="Tell us about your food"
@@ -191,6 +198,7 @@ function AddFood() {
                         <div className="mb-5">
                             <label htmlFor="name">Name</label>
                             <input
+                                required
                                 type="text"
                                 name="name"
                                 placeholder="Tell us about your food"

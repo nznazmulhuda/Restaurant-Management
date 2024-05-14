@@ -75,7 +75,7 @@ function Purchase() {
     // handle price ui when quantity field is onChange
     const handlePrice = (e) => {
         const q = e.target.value;
-        const p = parseFloat(foodPrice.slice(1)).toFixed(2);
+        const p = parseFloat(foodPrice).toFixed(2);
         document.getElementById("price").value = `$ ${q * p}`;
     };
 

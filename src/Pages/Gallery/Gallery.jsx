@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Loader, Modal } from "rsuite";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
@@ -17,17 +17,44 @@ function Gallery() {
     const [size, setSize] = useState();
     const [open, setOpen] = useState(false);
     const [gallerys, setGallerys] = useState([]);
+    const [page, setPage] = useState(1);
+    const [isFetchingMore, setIsFetchingMore] = useState(false);
+    const [fetching, setFetching] = useState(false);
+
     // get all gallery data
     const { isPending, refetch } = useQuery({
-        queryKey: ["foodGallery"],
-        queryFn: () =>
-            axios.get("/gallery").then((data) => {
-                if (data.data) {
-                    setGallerys(data.data.reverse());
+        queryKey: ["image", "page"],
+        queryFn: async () =>
+            axios.get(`/gallery?page=${page}`).then((res) => {
+                if (!res.data.success) {
+                    if (isFetchingMore) {
+                        setGallerys([...gallerys, ...res.data]);
+                        return setFetching(false);
+                    }
+                    setGallerys(res.data);
+                    return res.data;
                 }
-                return data;
+                setFetching(false);
             }),
     });
+    // handle scroll
+    const handleScroll = () => {
+        if (
+            window.innerHeight + document.documentElement.scrollTop ===
+            document.documentElement.offsetHeight
+        ) {
+            setPage(page + 1);
+            setIsFetchingMore(true);
+        }
+    };
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        refetch();
+    }, [isFetchingMore, refetch]);
     // handle modal
     const handleOpen = (value) => {
         setSize(value);
@@ -62,7 +89,7 @@ function Gallery() {
     };
 
     return (
-        <div>
+        <div className="mb-64">
             {/* title for this page */}
             <Helmet>
                 <title>Dish Dash | Gallery</title>
@@ -125,8 +152,7 @@ function Gallery() {
                 >
                     <RiAddLargeFill />
                 </div>
-
-                {gallerys.map((gallery) => (
+                {gallerys?.map((gallery) => (
                     <GalleryCard key={gallery._id} gallery={gallery} />
                 ))}
                 {isPending && (
@@ -139,6 +165,15 @@ function Gallery() {
                     </div>
                 )}
             </div>
+            {fetching && (
+                <div className="flex items-center justify-center mt-5 md:mt-10">
+                    <Loader
+                        size="lg"
+                        content="Fetching"
+                        className="font-bold"
+                    />
+                </div>
+            )}
         </div>
     );
 }

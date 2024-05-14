@@ -5,7 +5,7 @@ function GalleryCard({ gallery }) {
     const [isHover, setIsHover] = useState(false);
     const { name, imageUrl, feedback } = gallery;
     return (
-        <div data-aos="fade-down">
+        <div data-aos="fade-down" data-aos-offset="0">
             <div className="relative overflow-hidden w-full h-[30vh] rounded-lg transition-all">
                 <img
                     className="w-full h-full absolute transition-all hover:scale-[1.05] hover:transform rounded-lg"

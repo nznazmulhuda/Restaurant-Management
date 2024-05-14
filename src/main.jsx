@@ -15,11 +15,11 @@ import TanstackQuery from "./Tanstack/TanstackQuery.jsx";
 
 AOS.init();
 axios.defaults.baseURL = "http://localhost:5000";
+// axios.defaults.baseURL = "https://b9a11-server-side-nznazmulhuda-main.vercel.app";
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         {/* Tanstack Query */}
         <TanstackQuery>
-            {/* COntext api for Authentication */}
             <AuthProvider>
                 {/* HelmetProvider for dynamic title */}
                 <HelmetProvider>

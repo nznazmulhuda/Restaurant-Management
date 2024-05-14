@@ -7,6 +7,7 @@ function TopFood({ data }) {
         <div
             className="border-2 border-green-300 shadow-lg p-3 rounded-lg"
             data-aos="fade-up"
+            data-aos-offset="0"
         >
             <div className="h-[40vh] relative overflow-hidden rounded-lg">
                 <img
