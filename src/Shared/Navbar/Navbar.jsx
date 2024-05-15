@@ -30,8 +30,8 @@ function Navbar() {
                     to={"/"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-green-600 border-b border-b-green-600 focus:text-green-600 focus:no-underline hover:text-green-600 hover:no-underline`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-green-600 hover:text-black hover:no-underline transition-all`
+                            ? `font-semibold text-[12px] md:text-[14px] text-[#cd9232bb] border-b border-b-[#cd9232bb] focus:text-[#cd9232bb] focus:no-underline hover:text-[#cd9232bb] hover:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-[#cd9232bb] hover:text-black hover:no-underline transition-all`
                     }
                 >
                     Home
@@ -43,8 +43,8 @@ function Navbar() {
                     to={"/foods"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-green-600 border-b border-b-green-600 focus:text-green-600 focus:no-underline hover:text-green-600 hover:no-underline`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-green-600 hover:text-black hover:no-underline transition-all`
+                            ? `font-semibold text-[12px] md:text-[14px] text-[#cd9232bb] border-b border-b-[#cd9232bb] focus:text-[#cd9232bb] focus:no-underline hover:text-[#cd9232bb] hover:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-[#cd9232bb] hover:text-black hover:no-underline transition-all`
                     }
                 >
                     All Foods
@@ -56,8 +56,8 @@ function Navbar() {
                     to={"/gallery"}
                     className={({ isActive }) =>
                         isActive
-                            ? `font-semibold text-[12px] md:text-[14px] text-green-600 border-b border-b-green-600 focus:text-green-600 focus:no-underline hover:text-green-600 hover:no-underline`
-                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-green-600 hover:text-black hover:no-underline transition-all`
+                            ? `font-semibold text-[12px] md:text-[14px] text-[#cd9232bb] border-b border-b-[#cd9232bb] focus:text-[#cd9232bb] focus:no-underline hover:text-[#cd9232bb] hover:no-underline`
+                            : `font-semibold text-[12px] md:text-[14px] text-black border-b border-b-transparent hover:border-b-[#cd9232bb] hover:text-black hover:no-underline transition-all`
                     }
                 >
                     Gallery
@@ -105,7 +105,7 @@ function Navbar() {
 
                     <div className="flex md:hidden">
                         <button
-                            className="border border-green-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-green-600 transition-all"
+                            className="border border-[#cd9232bb] rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-[#cd9232bb] transition-all"
                             onClick={handleLogout}
                         >
                             Logout
@@ -132,7 +132,7 @@ function Navbar() {
                     {user ? (
                         <div className="flex items-center gap-5">
                             <div
-                                className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16  border-2 border-green-600 rounded-full cursor-pointer animate__animated animate__fadeInRight"
+                                className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16  border-2 border-[#cd9232bb] rounded-full cursor-pointer animate__animated animate__fadeInRight"
                                 onClick={() => setIsHover(!isHover)}
                             >
                                 <img
@@ -143,7 +143,7 @@ function Navbar() {
                             </div>
                             <div className="hidden md:flex animate__animated animate__fadeInRight">
                                 <button
-                                    className="border border-green-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-green-600 transition-all"
+                                    className="border border-[#cd9232bb] rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-[#cd9232bb] transition-all"
                                     onClick={handleLogout}
                                 >
                                     Logout
@@ -152,7 +152,7 @@ function Navbar() {
                         </div>
                     ) : (
                         <Link to={"/login"}>
-                            <button className="border border-green-600 rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-green-600 transition-all text-black animate__animated animate__fadeInRight">
+                            <button className="border border-[#cd9232bb] rounded-lg px-4 py-2 font-bold hover:text-white hover:bg-[#cd9232bb] transition-all text-black animate__animated animate__fadeInRight">
                                 Login
                             </button>
                         </Link>

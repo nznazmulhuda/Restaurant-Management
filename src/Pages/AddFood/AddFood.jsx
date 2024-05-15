@@ -71,17 +71,17 @@ function AddFood() {
                                     <p>{foodCategory}</p>
                                 </div>
                                 <h3>
-                                    <i>{foodPrice}</i>
+                                    <i>$ {foodPrice}</i>
                                 </h3>
                                 <h5 className="mb-2">
                                     Quantity:{" "}
-                                    <span className="text-green-600 font-bold">
+                                    <span className="text-[#cd9232bb] font-bold">
                                         {foodQuantity}
                                     </span>
                                 </h5>
                                 <h5 className="mb-2">
                                     Origin:{" "}
-                                    <span className="text-green-600 font-bold">
+                                    <span className="text-[#cd9232bb] font-bold">
                                         {foodOrigin}
                                     </span>
                                 </h5>
@@ -102,7 +102,7 @@ function AddFood() {
                                 type="url"
                                 name="foodImageUrl"
                                 placeholder="Food image URL"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setUrl(e.target.value)}
                             />
                         </div>
@@ -114,7 +114,7 @@ function AddFood() {
                                 type="text"
                                 name="foodName"
                                 placeholder="Food Name"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setFoodName(e.target.value)}
                             />
                         </div>
@@ -126,7 +126,7 @@ function AddFood() {
                                 type="text"
                                 name="category"
                                 placeholder="Food category"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) =>
                                     setFoodCategory(e.target.value)
                                 }
@@ -137,10 +137,10 @@ function AddFood() {
                             <label htmlFor="Food Price">Food Price</label>
                             <input
                                 required
-                                type="text"
+                                type="number"
                                 name="price"
                                 placeholder="Food price"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setFoodPrice(e.target.value)}
                             />
                         </div>
@@ -152,7 +152,7 @@ function AddFood() {
                                 type="number"
                                 name="quantity"
                                 placeholder="Food quantity"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) =>
                                     setFoodQuantity(e.target.value)
                                 }
@@ -166,7 +166,7 @@ function AddFood() {
                                 type="text"
                                 name="origin"
                                 placeholder="Tell us about your food"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1 resize-none"
                                 onChange={(e) => setFoodOrigin(e.target.value)}
                             />
                         </div>
@@ -177,7 +177,7 @@ function AddFood() {
                                 type="text"
                                 name="aboutFood"
                                 placeholder="Tell us about your food"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1 resize-none"
                                 onChange={(e) => setAbout(e.target.value)}
                             />
                         </div>
@@ -189,7 +189,7 @@ function AddFood() {
                                 type="email"
                                 name="aboutFood"
                                 placeholder="Tell us about your food"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1 resize-none"
                                 disabled
                                 value={user.email}
                             />
@@ -202,7 +202,7 @@ function AddFood() {
                                 type="text"
                                 name="name"
                                 placeholder="Tell us about your food"
-                                className="outline-none border border-green-600 py-2 px-4 w-full rounded-lg mt-1 resize-none"
+                                className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1 resize-none"
                                 value={user.displayName}
                                 disabled
                             />
@@ -210,7 +210,7 @@ function AddFood() {
 
                         <button
                             type="submit"
-                            className="border border-green-600 py-2 w-full rounded-lg text-lg hover:bg-green-600 hover:text-white font-bold transition-all"
+                            className="border border-[#cd9232bb] py-2 w-full rounded-lg text-lg hover:bg-[#cd9232bb] hover:text-white font-bold transition-all"
                         >
                             Add Food
                         </button>

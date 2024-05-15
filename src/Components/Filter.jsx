@@ -20,7 +20,7 @@ export default function Filter({ setFoods }) {
     return (
         <>
             <div className="flex items-center justify-between md:justify-start text-center">
-                <div>
+                <div className="animate__animated animate__fadeInDown animate__delay-1s">
                     <label
                         htmlFor="price"
                         className="text-xl md:text-2xl mr-2 font-bold "
@@ -38,7 +38,7 @@ export default function Filter({ setFoods }) {
                     </select>
                 </div>
 
-                <div>
+                <div className="animate__animated animate__fadeInDown animate__delay-1s">
                     <label
                         htmlFor="category"
                         className="text-xl md:text-2xl mr-2 font-bold ml-5"

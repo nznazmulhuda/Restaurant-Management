@@ -89,7 +89,7 @@ function Purchase() {
             {/* banner for title */}
             <Title title={"Purchase"} />
 
-            <div className="flex justify-center flex-col md:flex-row container mx-auto mt-10 items-center gap-5 md:gap-8 border border-green-600 rounded-xl p-5 md:p-10 animate__animated animate__fadeInUp">
+            <div className="flex justify-center flex-col md:flex-row container mx-auto mt-10 items-center gap-5 md:gap-8 border border-[#cd9232bb] rounded-xl p-5 md:p-10 animate__animated animate__fadeInUp">
                 <div className="grid grid-cols-1 container mx-auto rounded-xl gap-5 md:gap-7 animate__animated animate__fadeInLeft animate__delay-1s">
                     <div className="flex items-center">
                         <div className="w-full md:h-[40vh] relative overflow-hidden rounded-lg">
@@ -116,11 +116,11 @@ function Purchase() {
                                 {foodName}
                             </h1>
 
-                            <h1 className="text-xl md:text-2xl font-bold text-green-600 mt-2">
+                            <h1 className="text-xl md:text-2xl font-bold text-[#cd9232bb] mt-2">
                                 <span className="text-lg text-black">
                                     Price:{" "}
                                 </span>
-                                <i>{foodPrice}</i>
+                                <i>$ {foodPrice}</i>
                             </h1>
                         </div>
                     </div>
@@ -136,7 +136,7 @@ function Purchase() {
                             type="text"
                             name="foodName"
                             placeholder={`Food name`}
-                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            className="outline-none border border-[#cd9232bb] w-full rounded-lg shadow-lg py-2 px-3 mt-2"
                             defaultValue={foodName}
                             required
                         />
@@ -149,7 +149,7 @@ function Purchase() {
                             name="price"
                             id="price"
                             placeholder={`Price`}
-                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            className="outline-none border border-[#cd9232bb] w-full rounded-lg shadow-lg py-2 px-3 mt-2"
                             defaultValue={foodPrice}
                             disabled
                         />
@@ -161,7 +161,7 @@ function Purchase() {
                             type="number"
                             name="quantity"
                             placeholder={`Quantity`}
-                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2"
+                            className="outline-none border border-[#cd9232bb] w-full rounded-lg shadow-lg py-2 px-3 mt-2"
                             defaultValue={1}
                             onChange={handlePrice}
                             required
@@ -174,7 +174,7 @@ function Purchase() {
                             type="text"
                             name="name"
                             placeholder={`Your name`}
-                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
+                            className="outline-none border border-[#cd9232bb] w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
                             value={user.displayName}
                             disabled
                         />
@@ -186,7 +186,7 @@ function Purchase() {
                             type="text"
                             name="email"
                             placeholder={`Your email`}
-                            className="outline-none border border-green-600 w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
+                            className="outline-none border border-[#cd9232bb] w-full rounded-lg shadow-lg py-2 px-3 mt-2 cursor-not-allowed"
                             value={user.email}
                             disabled
                         />
@@ -194,7 +194,7 @@ function Purchase() {
 
                     <button
                         type="submit"
-                        className="border w-full py-2 border-green-600 rounded-lg shadow-lg text-lg hover:bg-green-600 hover:text-white font-bold transition-all"
+                        className="border w-full py-2 border-[#cd9232bb] rounded-lg shadow-lg text-lg hover:bg-[#cd9232bb] hover:text-white font-bold transition-all"
                         disabled={isQuantity ? true : false}
                     >
                         Purchase

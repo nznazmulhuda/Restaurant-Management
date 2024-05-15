@@ -33,7 +33,7 @@ function SingleFood() {
             {/* banner for title */}
             <Title title={foodName} />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto border rounded-xl p-5 md:p-10 border-green-600 shadow-lg gap-5 md:gap-7 animate__animated animate__fadeInUp mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto border rounded-xl p-5 md:p-10 border-[#cd9232bb] shadow-lg gap-5 md:gap-7 animate__animated animate__fadeInUp mt-10">
                 <div className="flex items-center animate__animated animate__fadeInLeft animate__delay-1s">
                     <div className="w-full md:h-[60vh] lg:h-[50vh] relative overflow-hidden rounded-lg">
                         <img
@@ -47,7 +47,7 @@ function SingleFood() {
                 <div className="flex flex-col justify-between py-5 animate__animated animate__fadeInRight animate__delay-1s">
                     <div>
                         <div className="flex items-center justify-between flex-row-reverse">
-                            <h6 className="text-sm text-green-600 font-bold text-right">
+                            <h6 className="text-sm text-[#cd9232bb] font-bold text-right">
                                 {foodCategory}
                             </h6>
 
@@ -58,19 +58,19 @@ function SingleFood() {
 
                         <p className="mt-5">{about}</p>
 
-                        <h1 className="text-xl md:text-2xl font-bold text-green-600 mt-2">
+                        <h1 className="text-xl md:text-2xl font-bold text-[#cd9232bb] mt-2">
                             <span className="text-lg text-black">Price: </span>
-                            <i>{foodPrice}</i>
+                            <i>$ {foodPrice}</i>
                         </h1>
 
-                        <h1 className="text-xl md:text-2xl font-bold text-green-600 mt-2">
+                        <h1 className="text-xl md:text-2xl font-bold text-[#cd9232bb] mt-2">
                             <span className="text-lg text-black">
                                 Made By:{" "}
                             </span>
                             <i>{name}</i>
                         </h1>
 
-                        <h1 className="text-xl md:text-2xl font-bold text-green-600 mt-2">
+                        <h1 className="text-xl md:text-2xl font-bold text-[#cd9232bb] mt-2">
                             <span className="text-lg text-black">
                                 Food Origin:{" "}
                             </span>
@@ -79,7 +79,7 @@ function SingleFood() {
                     </div>
 
                     <Link to={`/purchase/${_id}`}>
-                        <button className="border w-full text-center py-2 rounded-lg border-green-600 shadow-lg text-lg font-bold hover:bg-green-600 hover:text-white transition-all mt-5 text-black">
+                        <button className="border w-full text-center py-2 rounded-lg border-[#cd9232bb] shadow-lg text-lg font-bold hover:bg-[#cd9232bb] hover:text-white transition-all mt-5 text-black">
                             Purchase
                         </button>
                     </Link>

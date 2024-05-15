@@ -52,19 +52,19 @@ function AllFood() {
             <div className="flex justify-between flex-col md:flex-row items-center container mx-auto mt-10">
                 <form
                     onSubmit={handleSearch}
-                    className="flex items-center justify-center w-[90%] md:w-[70%] px-3 border border-green-600 rounded-lg shadow-lg mb-5 md:mb-0 animate__animated animate__fadeInDown animate__delay-1s"
+                    className="flex items-center justify-center w-[90%] md:w-[70%] px-3 border border-[#cd9232bb] rounded-lg shadow-lg mb-5 md:mb-0 animate__animated animate__fadeInDown animate__delay-1s bg-white"
                 >
                     <div className="flex justify-between items-center w-full">
                         <input
                             type="search"
                             name="search"
                             placeholder="Food name..."
-                            className="outline-none flex-1 border-none py-2 px-3 w-full md:h-[4vh]"
+                            className="outline-none flex-1 border-none py-2 px-3 w-full bg-transparent md:h-[4vh]"
                             onChange={(e) => setSearchTerm(e.target.value)}
                             required
                         />
                         <button>
-                            <FaSearch className="text-green-600 text-lg cursor-pointer" />
+                            <FaSearch className="text-[#cd9232bb] text-lg cursor-pointer" />
                         </button>
                     </div>
                 </form>

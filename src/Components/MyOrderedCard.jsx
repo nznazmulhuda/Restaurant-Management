@@ -72,7 +72,7 @@ function MyOrderedCard({ food, refetch }) {
 
                     <div>
                         <button
-                            className="border py-2 px-4 rounded-lg text-lg font-bold border-green-600 hover:bg-green-600 hover:text-white transition-all mr-5 text-black"
+                            className="border py-2 px-4 rounded-lg text-lg font-bold border-[#cd9232bb] hover:bg-[#cd9232bb] hover:text-white transition-all mr-5 text-black"
                             onClick={handleDelete}
                         >
                             Delete

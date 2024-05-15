@@ -50,7 +50,7 @@ function MyOrderedFood() {
                             No food found.
                         </h1>
                         <Link to={"/foods"} className="hover:no-underline">
-                            <button className="text-black text-2xl md:text-3xl border py-2 px-4 rounded-lg border-green-600 hover:bg-green-600 hover:text-white transition-all font-bold">
+                            <button className="text-black text-2xl md:text-3xl border py-2 px-4 rounded-lg border-[#cd9232bb] hover:bg-[#cd9232bb] hover:text-white transition-all font-bold">
                                 Purchase
                             </button>
                         </Link>

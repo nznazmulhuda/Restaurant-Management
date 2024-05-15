@@ -30,7 +30,7 @@ function Banner() {
                 {/* Left content */}
                 <div className="flex flex-col items-center justify-center px-0 md:px-10">
                     {/* Heading title */}
-                    <h1 className="text-lg md:text-xl lg:text-3xl font-bold text-black lg:h-[4vh]">
+                    <h1 className="text-lg md:text-xl lg:text-3xl font-bold text-white lg:h-[4vh]">
                         <TypeAnimation
                             sequence={heading}
                             deletionSpeed={90}
@@ -39,7 +39,7 @@ function Banner() {
                     </h1>
 
                     {/* Description */}
-                    <p className="text-[#000000db] font-semibold leading-5 mb-4 text-[12px]">
+                    <p className="text-[#ffffff8f] font-medium leading-5 mb-4 text-[12px]">
                         <TypeAnimation
                             splitter={(str) => str.split(/(?= )/)}
                             sequence={[des]}
@@ -52,7 +52,7 @@ function Banner() {
                     </p>
 
                     <Link to={"/foods"} className="mt-5">
-                        <button className="border rounded-lg py-2 px-6 font-extrabold border-green-950 hover:bg-green-950 hover:text-white hover:font-medium transition-all text-green-950 text-xl">
+                        <button className="border rounded-lg py-2 px-6 border-green-600 hover:bg-green-600 hover:text-white hover:font-medium transition-all text-white font-medium text-xl">
                             All Foods
                         </button>
                     </Link>

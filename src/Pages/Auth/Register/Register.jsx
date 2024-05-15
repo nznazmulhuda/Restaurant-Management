@@ -106,7 +106,7 @@ function Register() {
 
             <div className="container mx-auto mt-10 flex items-center justify-center">
                 <div className="flex items-center gap-10 md:gap-16 flex-col-reverse md:flex-row w-full">
-                    <div className="border p-5 md:p-10 rounded-xl border-green-600 shadow-xl md:w-[50%] animate__animated animate__fadeInLeft">
+                    <div className="border p-5 md:p-10 rounded-xl border-[#cd9232bb] shadow-xl md:w-[50%] animate__animated animate__fadeInLeft">
                         <form onSubmit={handleRegister}>
                             <div className="mb-5 md:mb-10">
                                 <label htmlFor="name">
@@ -117,7 +117,7 @@ function Register() {
                                     placeholder="Your name"
                                     name="name"
                                     required
-                                    className="outline-none border-b-2 border-b-green-600 rounded-lg py-2 px-4 w-full"
+                                    className="outline-none border-b-2 border-b-[#cd9232bb] rounded-lg py-2 px-4 w-full"
                                 />
                             </div>
 
@@ -130,7 +130,7 @@ function Register() {
                                     placeholder="Your email"
                                     name="email"
                                     required
-                                    className="outline-none border-b-2 border-b-green-600 rounded-lg py-2 px-4 w-full"
+                                    className="outline-none border-b-2 border-b-[#cd9232bb] rounded-lg py-2 px-4 w-full"
                                 />
                             </div>
                             <div className="mb-5 md:mb-10">
@@ -143,7 +143,7 @@ function Register() {
                                     placeholder="Photo URL"
                                     name="photoURL"
                                     required
-                                    className="outline-none border-b-2 border-b-green-600 rounded-lg py-2 px-4 w-full"
+                                    className="outline-none border-b-2 border-b-[#cd9232bb] rounded-lg py-2 px-4 w-full"
                                 />
                             </div>
                             <div className="mb-5">
@@ -156,14 +156,14 @@ function Register() {
                                     placeholder="Password"
                                     name="pass"
                                     required
-                                    className="outline-none border-b-2 border-b-green-600 rounded-lg py-2 px-4 w-full"
+                                    className="outline-none border-b-2 border-b-[#cd9232bb] rounded-lg py-2 px-4 w-full"
                                 />
                             </div>
 
                             <div>
                                 <button
                                     type="submit"
-                                    className="border w-full py-2 rounded-lg border-green-600 text-lg font-bold hover:bg-green-600 hover:text-white transition-all"
+                                    className="border w-full py-2 rounded-lg border-[#cd9232bb] text-lg font-bold hover:bg-[#cd9232bb] hover:text-white transition-all"
                                 >
                                     Register
                                 </button>
@@ -187,14 +187,14 @@ function Register() {
                         <div className="flex items-center gap-3 md:gap-5 justify-center mt-4">
                             <button
                                 onClick={handleGoogle}
-                                className="border p-1 md:p-2 rounded-full border-green-600 text-green-600 hover:text-white text-xl md:text-2xl transition-all hover:bg-green-600"
+                                className="border p-1 md:p-2 rounded-full border-[#cd9232bb] text-[#cd9232bb] hover:text-white text-xl md:text-2xl transition-all hover:bg-[#cd9232bb]"
                             >
                                 <FaGoogle />
                             </button>
 
                             <button
                                 onClick={handleGithub}
-                                className="border p-1 md:p-2 rounded-full border-green-600 text-green-600 hover:text-white text-xl md:text-2xl transition-all hover:bg-green-600"
+                                className="border p-1 md:p-2 rounded-full border-[#cd9232bb] text-[#cd9232bb] hover:text-white text-xl md:text-2xl transition-all hover:bg-[#cd9232bb]"
                             >
                                 <FaGithub />
                             </button>

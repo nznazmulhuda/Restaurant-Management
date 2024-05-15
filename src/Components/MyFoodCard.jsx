@@ -14,12 +14,12 @@ function MyFoodCard({ data }) {
                     <div>
                         <h4>{foodName}</h4>
                         <h3>
-                            <i>{foodPrice}</i>
+                            <i>$ {foodPrice}</i>
                         </h3>
                     </div>
 
                     <Link to={`/update/${_id}`}>
-                        <button className="border py-2 px-4 rounded-lg text-lg font-bold border-green-600 hover:bg-green-600 hover:text-white transition-all mr-5 text-black">
+                        <button className="border py-2 px-4 rounded-lg text-lg font-bold border-[#cd9232bb] hover:bg-[#cd9232bb] hover:text-white transition-all mr-5 text-black">
                             Update
                         </button>
                     </Link>

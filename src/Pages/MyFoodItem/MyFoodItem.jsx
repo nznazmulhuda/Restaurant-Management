@@ -63,7 +63,7 @@ function MyFoodItem() {
                                 to={"/add-food"}
                                 className="hover:no-underline"
                             >
-                                <button className="text-black text-2xl md:text-3xl border py-2 px-4 rounded-lg border-green-600 hover:bg-green-600 hover:text-white transition-all font-bold">
+                                <button className="text-black text-2xl md:text-3xl border py-2 px-4 rounded-lg border-[#cd9232bb] hover:bg-[#cd9232bb] hover:text-white transition-all font-bold">
                                     Add food
                                 </button>
                             </Link>
@@ -84,8 +84,8 @@ function MyFoodItem() {
                     <div className="border md:col-span-1 rounded-xl p-5 md:p-10">
                         <div className=" flex items-center justify-center">
                             <img
-                                className="w-32 md:w-36"
-                                src="/logo.jpg"
+                                className="w-32 md:w-36 rounded-lg"
+                                src={user.photoURL}
                                 alt=""
                             />
                         </div>
@@ -95,11 +95,11 @@ function MyFoodItem() {
                                 type="text"
                                 value={user.displayName}
                                 disabled
-                                className="outline-none border border-green-600 rounded-lg py-2 px-3 w-full cursor-not-allowed"
+                                className="outline-none border border-[#cd9232bb] rounded-lg py-2 px-3 w-full cursor-not-allowed"
                             />
 
                             <button
-                                className="border w-full py-2 mt-5 border-green-600 rounded-lg font-bold hover:bg-green-600 hover:text-white transition-all"
+                                className="border w-full py-2 mt-5 border-[#cd9232bb] rounded-lg font-bold hover:bg-[#cd9232bb] hover:text-white transition-all"
                                 onClick={handleLogout}
                             >
                                 Logout
