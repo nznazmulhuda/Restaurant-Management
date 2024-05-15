@@ -21,18 +21,13 @@ function Login() {
 
         login(email, pass)
             .then(() => {
-                axios
-                    .post("/token", user, { withCredentials: true })
-                    .then((res) => {
-                        if (res.data.success) {
-                            toast.success("Welcome back!");
-                            navigate(state ? state : "/");
-                        }
-                    });
+                navigate(state ? state : "/");
             })
             .catch((e) => toast.error(e.message));
-
-        form.reset();
+        axios.post("/token", user, { withCredentials: true }).then(() => {
+            toast.success("Login Success!");
+        });
+        e.target.reset();
     };
     // Login / Register account using google
     const handleGoogle = () => {

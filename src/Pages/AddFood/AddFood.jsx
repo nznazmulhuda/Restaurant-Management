@@ -10,8 +10,8 @@ function AddFood() {
     const { user } = useAuth();
     const navigate = useNavigate();
     const [url, setUrl] = useState(null);
-    const [foodQuantity, setFoodQuantity] = useState(0);
-    const [foodPrice, setFoodPrice] = useState("$Price");
+    const [foodQuantity1, setFoodQuantity] = useState(0);
+    const [foodPrice1, setFoodPrice] = useState("$Price");
     const [foodName, setFoodName] = useState("Food Name");
     const [foodOrigin, setFoodOrigin] = useState("Origin");
     const [about, setAbout] = useState("About food is here");
@@ -21,13 +21,15 @@ function AddFood() {
         e.preventDefault();
         const email = user.email;
         const name = user.displayName;
+        const foodPrice = parseInt(foodPrice1);
+        const foodQuantity = parseInt(foodQuantity1);
         const food = {
             url,
             foodName,
             foodCategory,
+            foodOrigin,
             foodPrice,
             foodQuantity,
-            foodOrigin,
             about,
             email,
             name,
@@ -71,12 +73,12 @@ function AddFood() {
                                     <p>{foodCategory}</p>
                                 </div>
                                 <h3>
-                                    <i>$ {foodPrice}</i>
+                                    <i>$ {foodPrice1}</i>
                                 </h3>
                                 <h5 className="mb-2">
                                     Quantity:{" "}
                                     <span className="text-[#cd9232bb] font-bold">
-                                        {foodQuantity}
+                                        {foodQuantity1}
                                     </span>
                                 </h5>
                                 <h5 className="mb-2">

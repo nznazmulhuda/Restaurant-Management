@@ -34,7 +34,7 @@ function AllFood() {
     // get limited data according page number
     useEffect(() => {
         axios.get(`/foods?activePage=${activePage}`).then((res) => {
-            setFoods(res.data);
+            setFoods(res.data.reverse());
         });
     }, [activePage]);
 

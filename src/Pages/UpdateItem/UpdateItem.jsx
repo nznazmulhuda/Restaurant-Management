@@ -14,9 +14,9 @@ function UpdateItem() {
     const [url, setUrl] = useState("");
     const [about, setAbout] = useState("");
     const [foodName, setFoodName] = useState("");
-    const [foodPrice, setFoodPrice] = useState("");
+    const [foodPrice1, setFoodPrice] = useState("");
     const [foodCategory, setFoodCategory] = useState("");
-    const [foodQuantity, setFoodQuantity] = useState("");
+    const [foodQuantity1, setFoodQuantity] = useState("");
     // get data
     const { isPending } = useQuery({
         queryKey: ["update"],
@@ -35,6 +35,8 @@ function UpdateItem() {
     // handle update
     const handleSubmit = (e) => {
         e.preventDefault();
+        const foodPrice = parseInt(foodPrice1);
+        const foodQuantity = parseInt(foodQuantity1);
         const updateFood = {
             url,
             foodName,
@@ -127,13 +129,13 @@ function UpdateItem() {
                                 </div>
 
                                 <h3>
-                                    <i>$ {foodPrice}</i>
+                                    <i>$ {foodPrice1}</i>
                                 </h3>
 
                                 <h5 className="mb-2">
                                     Quantity:{" "}
                                     <span className="text-[#cd9232bb] font-bold">
-                                        {foodQuantity}
+                                        {foodQuantity1}
                                     </span>
                                 </h5>
 
@@ -203,18 +205,18 @@ function UpdateItem() {
                                 onChange={(e) =>
                                     setFoodQuantity(e.target.value)
                                 }
-                                defaultValue={foodQuantity}
+                                defaultValue={foodQuantity1}
                             />
                         </div>
 
                         <div className="mb-5">
                             <label htmlFor="Food Price">Food Price</label>
                             <input
-                                type="text"
+                                type="number"
                                 name="price"
                                 className="outline-none border border-[#cd9232bb] py-2 px-4 w-full rounded-lg mt-1"
                                 onChange={(e) => setFoodPrice(e.target.value)}
-                                defaultValue={foodPrice}
+                                defaultValue={foodPrice1}
                             />
                         </div>
 
