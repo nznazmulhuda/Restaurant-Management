@@ -31,5 +31,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 </HelmetProvider>
             </AuthProvider>
         </TanstackQuery>
-    </React.StrictMode>
+    </React.StrictMode>,
 );

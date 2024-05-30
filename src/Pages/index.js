@@ -10,6 +10,7 @@ import AddFood from "./AddFood/AddFood";
 import MyFoodItem from "./MyFoodItem/MyFoodItem";
 import MyOrderedFood from "./MyOrderedFood/MyOrderedFood";
 import UpdateItem from "./UpdateItem/UpdateItem";
+import Event from "./Event/Event";
 
 export {
     AllFood,
@@ -24,4 +25,5 @@ export {
     MyFoodItem,
     MyOrderedFood,
     UpdateItem,
+    Event,
 };

@@ -2,6 +2,7 @@ import {
     AddFood,
     AllFood,
     ErrorPage,
+    Event,
     Gallery,
     Home,
     Login,
@@ -92,6 +93,14 @@ const Router = createBrowserRouter([
                 element: (
                     <IsLoged>
                         <Register />
+                    </IsLoged>
+                ),
+            },
+            {
+                path: "/event",
+                element: (
+                    <IsLoged>
+                        <Event />
                     </IsLoged>
                 ),
             },
