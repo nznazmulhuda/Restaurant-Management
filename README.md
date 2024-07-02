@@ -1,12 +1,12 @@
-# Dish Dash
+# Restaurant Management Web Application
 
-## Live Page: [Dish Dash](https://dish-dash-restaurant.web.app)
-
-### Assignment_ID: assignment_category_0005
-
-Welcome to the official website of Dish Dash!
+## Live Page: [Restaurant Management](https://dish-dash-restaurant.web.app)
 
 <hr />
+
+## Overview
+
+Welcome to Restaurant Management website. Here you will upload your Dish with a beautiful image also you can sell your dish. In this website you can create your personal account and upload your dish.
 
 ## Features
 
@@ -50,10 +50,10 @@ Welcome to the official website of Dish Dash!
 ## Getting Started
 
 1. **Clone the repository**
-   ```git clone https://github.com/Porgramming-Hero-web-course/b9a11-client-side-nznazmulhuda.git```
+   `git clone https://github.com/Porgramming-Hero-web-course/b9a11-client-side-nznazmulhuda.git`
 
 2. **Change Directory**
-   ```cd b9a11-client-side-nznazmulhuda```
+   `cd b9a11-client-side-nznazmulhuda`
 
 3. **Install all dependencies**
    `npm i`
