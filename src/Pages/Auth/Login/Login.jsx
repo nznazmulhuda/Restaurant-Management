@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import style from "./Login.module.css";
 import useAuth from "../../../Hooks/useAuth";
-import Title from "../../../Components/Title";
+import Title from "../../../components/Title";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";

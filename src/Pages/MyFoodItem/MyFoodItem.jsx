@@ -4,9 +4,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
-import Title from "../../Components/Title";
+import Title from "../../components/Title";
 import { useQuery } from "@tanstack/react-query";
-import MyFoodCard from "../../Components/MyFoodCard";
+import MyFoodCard from "../../components/MyFoodCard";
 import { Helmet } from "react-helmet-async";
 
 function MyFoodItem() {

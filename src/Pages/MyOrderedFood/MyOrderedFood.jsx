@@ -3,9 +3,9 @@ import { Loader } from "rsuite";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import Title from "../../Components/Title";
+import Title from "../../components/Title";
 import { useQuery } from "@tanstack/react-query";
-import MyOrderedCard from "../../Components/MyOrderedCard";
+import MyOrderedCard from "../../components/MyOrderedCard";
 import { Helmet } from "react-helmet-async";
 
 function MyOrderedFood() {

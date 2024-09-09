@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { Loader } from "rsuite";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import Title from "../../Components/Title";
+import Title from "../../components/Title";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";

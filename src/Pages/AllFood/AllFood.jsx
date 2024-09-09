@@ -1,11 +1,11 @@
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
-import Title from "../../Components/Title";
+import Title from "../../components/Title";
 import { useEffect, useState } from "react";
-import FoodCard from "../../Components/FoodCard";
-import Paginations from "../../Components/Paginations";
+import FoodCard from "../../components/FoodCard";
+import Paginations from "../../components/Paginations";
 import { Helmet } from "react-helmet-async";
-import Filter from "../../Components/Filter";
+import Filter from "../../components/Filter";
 
 function AllFood() {
     const [foods, setFoods] = useState([]);

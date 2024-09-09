@@ -4,11 +4,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import chef from "../../assets/chef.avif";
 import { Helmet } from "react-helmet-async";
-import Banner from "../../Components/Banner";
-import TopFood from "../../Components/TopFood";
+import Banner from "../../components/Banner";
+import TopFood from "../../components/TopFood";
 import { HiOutlineMail } from "react-icons/hi";
 import { useQuery } from "@tanstack/react-query";
-import EventBanner from "../../Components/EventBanner";
+import EventBanner from "../../components/EventBanner";
+import Book from "../../components/Book";
 
 function Home() {
 	const [datas, setDatas] = useState([]);
@@ -106,6 +107,8 @@ function Home() {
 			<div className="mt-10">
 				<EventBanner />
 			</div>
+
+			<Book />
 
 			<h1
 				className="mt-10 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-5"

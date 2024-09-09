@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
-import Title from "../../../Components/Title";
+import Title from "../../../components/Title";
 import { PiChefHatDuotone } from "react-icons/pi";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { auth } from "../../../Firebase/Firebase.config";

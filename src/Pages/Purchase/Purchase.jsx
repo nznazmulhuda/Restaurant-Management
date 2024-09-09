@@ -1,7 +1,7 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
-import Title from "../../Components/Title";
+import Title from "../../components/Title";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";

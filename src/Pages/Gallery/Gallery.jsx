@@ -3,10 +3,10 @@ import { Loader, Modal } from "rsuite";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
-import Title from "../../Components/Title";
+import Title from "../../components/Title";
 import { RiAddLargeFill } from "react-icons/ri";
 import { useQuery } from "@tanstack/react-query";
-import GalleryCard from "../../Components/GalleryCard";
+import GalleryCard from "../../components/GalleryCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 

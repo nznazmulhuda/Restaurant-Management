@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
-import Title from "../../Components/Title";
+import Title from "../../components/Title";
 
 function SingleFood() {
     const { id } = useParams();
