@@ -10,6 +10,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { useQuery } from "@tanstack/react-query";
 import EventBanner from "../../components/EventBanner";
 import Book from "../../components/Book";
+import Chefs from "../../components/Chefs";
 
 function Home() {
 	const [datas, setDatas] = useState([]);
@@ -178,7 +179,7 @@ function Home() {
 				</div>
 			</div>
 
-			<section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+			<section className="w-full py-12 md:py-24 lg:py-32">
 				<div className="container px-4 md:px-6 max-w-2xl mx-auto text-center">
 					<div className="space-y-4">
 						<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -202,6 +203,8 @@ function Home() {
 					</form>
 				</div>
 			</section>
+
+			<Chefs />
 		</div>
 	);
 }
